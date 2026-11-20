@@ -1903,826 +1903,750 @@
             </div>
         </div>
 
-        <!-- ==========================================
+    <!-- ==========================================
          SCREEN 3: HOME SCREEN
     =========================================== -->
-        <div id="homeScreen" class="view-screen home-bg">
-            <header class="app-header">
-                <div class="header-user" onclick="handleTabNavigation(document.querySelectorAll('.nav-tab')[3], 'menuScreen')">
-                    <div class="header-logo" id="homeLogoBox" style="display:none"></div>
-                    <span class="user-name" id="homeUserName"></span>
-                </div>
-
-                <div class="header-actions">
-                    <div class="wallet-chip" title="Wallet Balance" onclick="openMenuSection('My Wallet')">
-                        <svg width="20" height="20" viewBox="0 0 48 48">
-                            <circle cx="24" cy="24" r="22" fill="#f59e0b" stroke="#d97706" stroke-width="2" />
-                            <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">₹</text>
-                        </svg>
-                        <span class="wallet-balance" id="homeWalletBalance">₹ 0</span>
-                    </div>
-                    <div class="bell-btn" onclick="openMenuSection('Notifications')">
-                        <i class="fa-solid fa-bell"></i>
-                    </div>
-                </div>
-            </header>
-
-            <div class="notice-bar">
-                <i class="fa-solid fa-bullhorn notice-icon"></i>
-                <marquee class="notice-ticker" id="noticeMarquee" scrollamount="4">
-                    CLICK HERE TO READ RULES ‼️ Every Player Of FreeFire Game Name Must Match Entry Details!
-                </marquee>
-            </div>
-
-            <div class="banner-container">
-                <div class="slider-track" id="sliderTrack">
-                    <!-- Dynamic Slider Items inserted here -->
-                </div>
-                <div class="slider-dots" id="sliderDots">
-                    <!-- Slider dots populated dynamically -->
-                </div>
-            </div>
-
-            <h2 class="section-title">My Matches</h2>
-            <div class="my-matches-grid">
-                <div class="match-action-card" onclick="openContestsScreen('My Matches', 'ongoing')">
-                    <div class="match-icon-circle color-ongoing">
-                        <i class="fa-solid fa-arrows-rotate"></i>
-                    </div>
-                    <span class="match-action-label">Ongoing</span>
-                </div>
-
-                <div class="match-action-card" onclick="openContestsScreen('My Matches', 'upcoming')">
-                    <div class="match-icon-circle color-upcoming">
-                        <i class="fa-regular fa-calendar"></i>
-                    </div>
-                    <span class="match-action-label">Upcoming</span>
-                </div>
-
-                <div class="match-action-card" onclick="openContestsScreen('My Matches', 'resulted')">
-                    <div class="match-icon-circle color-completed">
-                        <i class="fa-solid fa-check"></i>
-                    </div>
-                    <span class="match-action-label">Completed</span>
-                </div>
-            </div>
-
-            <h2 class="section-title">Esports Games</h2>
-            <div class="esports-grid" id="esportsGamesList">
-                <!-- Dynamic Esports Games Grid populated by Firebase -->
-            </div>
+    <div id="homeScreen" class="view-screen home-bg">
+      <header class="app-header">
+        <div class="header-user" onclick="handleTabNavigation(document.querySelectorAll('.nav-tab')[3], 'menuScreen')">
+          <div class="header-logo" id="homeLogoBox" style="display:none"></div>
+          <span class="user-name" id="homeUserName"></span>
         </div>
 
-        <!-- ==========================================
-         SCREEN 4: MATCH CONTESTS SCREEN
-    =========================================== -->
-        <div id="contestsScreen" class="view-screen contests-bg">
-            <div class="sub-navbar">
-                <div class="back-btn" onclick="showScreen('homeScreen')">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </div>
-                <div class="nav-heading" id="contestGameTitle">BR FULL MAP Contests</div>
-            </div>
+        <div class="header-actions">
+          <div class="wallet-chip" title="Wallet Balance" onclick="openMenuSection('My Wallet')">
+            <svg width="20" height="20" viewBox="0 0 48 48">
+              <circle cx="24" cy="24" r="22" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+              <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">₹</text>
+            </svg>
+            <span class="wallet-balance" id="homeWalletBalance">₹ 0</span>
+          </div>
+          <div class="bell-btn" onclick="openMenuSection('Notifications')">
+            <i class="fa-solid fa-bell"></i>
+          </div>
+        </div>
+      </header>
 
-            <div class="contest-tabs-bar">
-                <div class="contest-tab" id="tabOngoing" onclick="switchContestTab('ongoing')">Ongoing</div>
-                <div class="contest-tab active" id="tabUpcoming" onclick="switchContestTab('upcoming')">Upcoming</div>
-                <div class="contest-tab" id="tabResulted" onclick="switchContestTab('resulted')">Resulted</div>
-            </div>
+      <div class="notice-bar">
+        <i class="fa-solid fa-bullhorn notice-icon"></i>
+        <marquee class="notice-ticker" id="noticeMarquee" scrollamount="4">
+          CLICK HERE TO READ RULES ‼️ Every Player Of FreeFire Game Name Must Match Entry Details!
+        </marquee>
+      </div>
 
-            <div class="contest-cards-container" id="contestCardsList">
-                <!-- Match Cards populated by JS -->
-            </div>
+      <div class="banner-container">
+        <div class="slider-track" id="sliderTrack">
+          <!-- Dynamic Slider Items inserted here -->
+        </div>
+        <div class="slider-dots" id="sliderDots">
+          <!-- Slider dots populated dynamically -->
+        </div>
+      </div>
+
+      <h2 class="section-title">My Matches</h2>
+      <div class="my-matches-grid">
+        <div class="match-action-card" onclick="openContestsScreen('My Matches', 'ongoing')">
+          <div class="match-icon-circle color-ongoing">
+            <i class="fa-solid fa-arrows-rotate"></i>
+          </div>
+          <span class="match-action-label">Ongoing</span>
         </div>
 
-        <!-- ==========================================
-         SCREEN 5: LEADERBOARD SCREEN
-    =========================================== -->
-        <div id="leaderboardScreen" class="view-screen leaderboard-bg">
-            <div class="sub-navbar">
-                <div class="back-btn" onclick="showScreen('homeScreen')">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </div>
-                <div class="nav-heading">Leaderboard</div>
-            </div>
-
-            <div class="lb-filter-capsule">
-                <div class="lb-tab-btn active" onclick="switchLbFilter(this, 'weekly')">Weekly</div>
-                <div class="lb-tab-btn" onclick="switchLbFilter(this, 'monthly')">Monthly</div>
-                <div class="lb-tab-btn" onclick="switchLbFilter(this, 'fulltime')">Fulltime</div>
-            </div>
-
-            <div class="lb-table-header">
-                <div>Position</div>
-                <div>Player Name</div>
-                <div style="text-align: right;">Prize</div>
-            </div>
-
-            <div class="lb-list-container" id="leaderboardList">
-                <!-- Rankings populated here -->
-            </div>
+        <div class="match-action-card" onclick="openContestsScreen('My Matches', 'upcoming')">
+          <div class="match-icon-circle color-upcoming">
+            <i class="fa-regular fa-calendar"></i>
+          </div>
+          <span class="match-action-label">Upcoming</span>
         </div>
 
-        <!-- ==========================================
-         SCREEN 6: REFER & EARN SCREEN
-    =========================================== -->
-        <div id="earnScreen" class="view-screen earn-bg">
-            <div class="sub-navbar" style="background: #083b66;">
-                <div class="back-btn" onclick="showScreen('homeScreen')">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </div>
-                <div class="nav-heading">Refer & Earn</div>
-            </div>
-
-            <div class="earn-hero">
-                <h1 class="earn-title">Refer your friend<br>and Earn</h1>
-                <i class="fa-solid fa-gift gift-box-icon"></i>
-
-                <p class="earn-desc-box" id="earnNoticeText">
-                    Invite your friends on App using your Referral Code to Earn 0 Coins in depositWallet When they join First Paid match, with minimum entry fee of 0. Your friends also get 0 Coins in depositWallet as Register Bonus!
-                </p>
-
-                <div class="referral-box-outer">
-                    <div class="ref-label">Your referral code</div>
-                    <div class="ref-pill-field">
-                        <span id="displayReferralCode">...</span>
-                        <i class="fa-regular fa-copy copy-btn-icon" onclick="copyReferralCode()" title="Copy code"></i>
-                    </div>
-                </div>
-
-                <div class="share-tagline">Share your referral code via</div>
-
-                <div class="social-share-buttons">
-                    <button class="share-btn btn-tg" onclick="shareReferral('telegram')">
-                        <i class="fa-brands fa-telegram"></i> Telegram
-                    </button>
-                    <button class="share-btn btn-fb" onclick="shareReferral('facebook')">
-                        <i class="fa-brands fa-facebook-f"></i> Facebook
-                    </button>
-                    <button class="share-btn btn-wa" onclick="shareReferral('whatsapp')">
-                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                    </button>
-                </div>
-            </div>
+        <div class="match-action-card" onclick="openContestsScreen('My Matches', 'resulted')">
+          <div class="match-icon-circle color-completed">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <span class="match-action-label">Completed</span>
         </div>
+      </div>
 
-        <!-- ==========================================
-         SCREEN 7: MENU SCREEN
-    =========================================== -->
-        <div id="menuScreen" class="view-screen menu-bg">
-            <div class="sub-navbar">
-                <div class="back-btn" onclick="showScreen('homeScreen')">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </div>
-                <div class="nav-heading">Menu</div>
-            </div>
-
-            <div class="menu-profile-box">
-                <div class="menu-avatar-circle">
-                    <div class="menu-avatar-inner">
-                        <i class="fa-solid fa-user"></i>
-                    </div>
-                </div>
-                <h2 class="menu-username" id="menuUsernameText">Player</h2>
-            </div>
-
-            <div class="menu-stats-card">
-                <div class="stat-col">
-                    <div class="stat-val" id="statMatches">0</div>
-                    <div class="stat-label">Matches Played</div>
-                </div>
-                <div class="stat-col">
-                    <div class="stat-val" id="statKills">0</div>
-                    <div class="stat-label">Total Kills</div>
-                </div>
-                <div class="stat-col">
-                    <div class="stat-val">
-                        <svg width="18" height="18" viewBox="0 0 48 48">
-                            <circle cx="24" cy="24" r="22" fill="#f59e0b" stroke="#d97706" stroke-width="2" />
-                            <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">₹</text>
-                        </svg>
-                        <span id="statEarnings">0</span>
-                    </div>
-                    <div class="stat-label">Total Earning</div>
-                </div>
-            </div>
-
-            <div class="menu-list-wrap">
-                <div class="menu-item-card" onclick="openMenuSection('My Profile')">
-                    <div class="menu-item-left"><i class="fa-solid fa-user"></i><span class="menu-item-text">My Profile</span></div>
-                    <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
-                </div>
-
-                <div class="menu-item-card" onclick="openMenuSection('My Wallet')">
-                    <div class="menu-item-left"><i class="fa-solid fa-wallet"></i><span class="menu-item-text">My Wallet</span></div>
-                    <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
-                </div>
-
-                <div class="menu-item-card" onclick="openMenuSection('My Statistics')">
-                    <div class="menu-item-left"><i class="fa-solid fa-chart-simple"></i><span class="menu-item-text">My Statistics</span></div>
-                    <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
-                </div>
-
-                <div class="menu-item-card" onclick="handleTabNavigation(document.querySelectorAll('.nav-tab')[1], 'leaderboardScreen')">
-                    <div class="menu-item-left"><i class="fa-solid fa-trophy"></i><span class="menu-item-text">Top Players</span></div>
-                    <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
-                </div>
-
-                <div class="menu-item-card" onclick="openMenuSection('Notifications')">
-                    <div class="menu-item-left"><i class="fa-solid fa-bell"></i><span class="menu-item-text">Notifications</span></div>
-                    <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
-                </div>
-
-                <div class="menu-item-card" onclick="openMenuSection('Contact Us')">
-                    <div class="menu-item-left"><i class="fa-solid fa-headset"></i><span class="menu-item-text">Contact Us</span></div>
-                    <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
-                </div>
-
-                <div class="menu-item-card" style="cursor: default;">
-                    <div class="menu-item-left"><i class="fa-solid fa-bell"></i><span class="menu-item-text">Importance Notice</span></div>
-                    <label class="switch-ui">
-                        <input type="checkbox" id="noticeToggle" checked onchange="handleNoticeToggle(this.checked)">
-                        <span class="switch-slider"></span>
-                    </label>
-                </div>
-
-                <div class="menu-item-card" onclick="openMenuSection('FAQ')">
-                    <div class="menu-item-left"><i class="fa-solid fa-circle-question"></i><span class="menu-item-text">FAQ</span></div>
-                    <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
-                </div>
-
-                <div class="menu-item-card" onclick="openMenuSection('About Us')">
-                    <div class="menu-item-left"><i class="fa-solid fa-circle-info"></i><span class="menu-item-text">About Us</span></div>
-                    <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
-                </div>
-
-                <div class="menu-item-card" onclick="openMenuSection('Privacy Policy')">
-                    <div class="menu-item-left"><i class="fa-solid fa-lock"></i><span class="menu-item-text">Privacy Policy</span></div>
-                    <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
-                </div>
-
-                <div class="menu-item-card" onclick="openMenuSection('Terms & Conditions')">
-                    <div class="menu-item-left"><i class="fa-solid fa-shield-halved"></i><span class="menu-item-text">Terms & Conditions</span></div>
-                    <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
-                </div>
-
-                <div class="menu-item-card" onclick="handleLogout()">
-                    <div class="menu-item-left"><i class="fa-solid fa-power-off"></i><span class="menu-item-text">Logout</span></div>
-                    <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
-                </div>
-            </div>
-        </div>
-
-        <div id="walletScreen" class="view-screen" style="background:#0b1a2e">
-            <div class="sub-navbar">
-                <div class="back-btn" onclick="showScreen(walletReturn)"><i class="fa-solid fa-chevron-left"></i></div>
-                <div class="nav-heading">Wallet</div>
-            </div>
-            <div class="wl-body">
-                <div class="wl-center">
-                    <div class="wl-total">Total Balance = <span id="wlTotal">0</span></div>
-                </div>
-                <div class="wl-sub"><span>Deposit Balance: <span id="wlDep">0</span></span><span>Win Balance: <span id="wlWin">0</span></span></div>
-                <button class="wl-btn wl-green" onclick="openRecharge()">Buy More</button>
-                <button class="wl-btn wl-red" onclick="openRedeem()">Withdraw</button>
-                <div class="wl-h">Wallet history</div>
-                <div id="wlHistory"></div>
-            </div>
-        </div>
-
-        <div id="rechargeScreen" class="view-screen" style="background:#0b1a2e">
-            <div class="sub-navbar">
-                <div class="back-btn" onclick="showScreen('walletScreen')"><i class="fa-solid fa-chevron-left"></i></div>
-                <div class="nav-heading">Recharge</div>
-            </div>
-            <div class="wl-body">
-                <div class="wl-center" style="font-size:18px">Total Balance<div style="font-size:30px;margin-top:8px" id="rcTotal">₹ 0</div>
-                </div>
-                <div class="rc-card">
-                    <h3>Amount</h3>
-                    <div class="rc-input"><span>₹</span><input id="rcAmount" type="number" inputmode="numeric" placeholder="11 ~ 1000"></div>
-                    <div class="rc-minmax"><span>Minimum:₹ 11</span><span>Maximum:₹ 1000</span></div>
-                    <div class="rc-chips">
-                        <div onclick="setRechargeAmt(20)">₹20</div>
-                        <div onclick="setRechargeAmt(50)">₹50</div>
-                        <div onclick="setRechargeAmt(100)">₹100</div>
-                        <div onclick="setRechargeAmt(200)">₹200</div>
-                        <div onclick="setRechargeAmt(500)">₹500</div>
-                        <div onclick="setRechargeAmt(1000)">₹1000</div>
-                    </div>
-                    <button class="rc-go" onclick="startRecharge()">Recharge</button>
-                </div>
-                <div class="wl-h" style="font-size:19px;border-bottom:1px solid #fff;padding-bottom:8px">Deposits History</div>
-                <div id="rcHistory"></div>
-            </div>
-        </div>
-
-        <div id="redeemScreen" class="view-screen" style="background:#0b1a2e">
-            <div class="sub-navbar">
-                <div class="back-btn" onclick="showScreen('walletScreen')"><i class="fa-solid fa-chevron-left"></i></div>
-                <div class="nav-heading">Redeem Won Coins</div>
-            </div>
-            <div class="wl-body">
-                <div class="wl-center pos" style="margin-bottom:16px">Win Balance: <span id="rdWin">₹ 0</span></div>
-                <div id="rdList"></div>
-            </div>
-        </div>
-
-        <div id="infoScreen" class="view-screen" style="background:#0b1a2e">
-            <div class="sub-navbar">
-                <div class="back-btn" onclick="closeInfo()"><i class="fa-solid fa-chevron-left"></i></div>
-                <div class="nav-heading" id="infoTitle"></div>
-            </div>
-            <div id="infoBody" style="padding:18px 16px 90px;font-size:14px;color:#e2e8f0"></div>
-        </div>
-
-        <!-- Fixed Bottom Navigation Bar -->
-        <nav class="bottom-navbar" id="appBottomNav">
-            <div class="nav-tab" onclick="handleTabNavigation(this, 'earnScreen')">
-                <i class="fa-solid fa-gift"></i>
-                <span>Earn</span>
-            </div>
-            <div class="nav-tab" onclick="handleTabNavigation(this, 'leaderboardScreen')">
-                <i class="fa-solid fa-trophy"></i>
-                <span>Leaderboard</span>
-            </div>
-            <div class="nav-tab active" onclick="handleTabNavigation(this, 'homeScreen')">
-                <i class="fa-solid fa-house"></i>
-                <span>Home</span>
-            </div>
-            <div class="nav-tab" onclick="handleTabNavigation(this, 'menuScreen')">
-                <i class="fa-solid fa-ellipsis"></i>
-                <span>Menu</span>
-            </div>
-        </nav>
-
-        <!-- Join Tournament Modal -->
-        <div class="modal-backdrop" id="joinModal">
-            <div class="modal-card">
-                <div class="modal-title">
-                    <span id="modalMatchTitle">Join Match</span>
-                    <i class="fa-solid fa-xmark modal-close-icon" onclick="closeJoinModal()"></i>
-                </div>
-                <div class="modal-fee-banner">
-                    <span>Entry Fee:</span>
-                    <span class="modal-fee-val">
-                        <svg width="16" height="16" viewBox="0 0 48 48">
-                            <circle cx="24" cy="24" r="22" fill="#f59e0b" stroke="#d97706" stroke-width="2" />
-                            <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">₹</text>
-                        </svg>
-                        <span id="modalFeeText">0</span>
-                    </span>
-                </div>
-                <input type="text" id="modalPlayerIgn" class="modal-input" placeholder="Free Fire In-Game Name (IGN)" required />
-                <input type="text" id="modalPlayerUid" class="modal-input" placeholder="Free Fire UID (Numeric)" required />
-                <button type="button" class="btn-modal-confirm" onclick="confirmJoinMatch()">Confirm & Join</button>
-            </div>
-        </div>
-
-        <!-- Wallet modal (UTR / UPI entry) -->
-        <div class="modal-backdrop" id="walletModal">
-            <div class="modal-card">
-                <div class="modal-title"><span id="wmTitle"></span><i class="fa-solid fa-xmark modal-close-icon" onclick="closeWalletModal()"></i></div>
-                <div id="wmBody"></div>
-                <button type="button" class="btn-modal-confirm" id="wmBtn"></button>
-            </div>
-        </div>
-
-        <!-- Global Toast Notification -->
-        <div class="toast-box" id="appToast"></div>
-
+      <h2 class="section-title">Esports Games</h2>
+      <div class="esports-grid" id="esportsGamesList">
+        <!-- Dynamic Esports Games Grid populated by Firebase -->
+      </div>
     </div>
 
-    <script>
-        // ==========================================
-        // 1. FIREBASE CONFIGURATION
-        // ==========================================
-        const firebaseConfig = {
-            "apiKey": "AIzaSyAbLUoHOZ_4svA1Xtr9nHsSGODyVA-3oGY",
-            "authDomain": "eagle-e-sport-35478.firebaseapp.com",
-            "databaseURL": "https://eagle-e-sport-35478-default-rtdb.firebaseio.com",
-            "projectId": "eagle-e-sport-35478",
-            "storageBucket": "eagle-e-sport-35478.firebasestorage.app",
-            "messagingSenderId": "80439439795",
-            "appId": "1:80439439795:web:da57015602b53b3edf1bc6",
-            "measurementId": "G-KQRCH8HKBR"
+    <!-- ==========================================
+         SCREEN 4: MATCH CONTESTS SCREEN
+    =========================================== -->
+    <div id="contestsScreen" class="view-screen contests-bg">
+      <div class="sub-navbar">
+        <div class="back-btn" onclick="showScreen('homeScreen')">
+          <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="nav-heading" id="contestGameTitle">BR FULL MAP Contests</div>
+      </div>
+
+      <div class="contest-tabs-bar">
+        <div class="contest-tab" id="tabOngoing" onclick="switchContestTab('ongoing')">Ongoing</div>
+        <div class="contest-tab active" id="tabUpcoming" onclick="switchContestTab('upcoming')">Upcoming</div>
+        <div class="contest-tab" id="tabResulted" onclick="switchContestTab('resulted')">Resulted</div>
+      </div>
+
+      <div class="contest-cards-container" id="contestCardsList">
+        <!-- Match Cards populated by JS -->
+      </div>
+    </div>
+
+    <!-- ==========================================
+         SCREEN 5: LEADERBOARD SCREEN
+    =========================================== -->
+    <div id="leaderboardScreen" class="view-screen leaderboard-bg">
+      <div class="sub-navbar">
+        <div class="back-btn" onclick="showScreen('homeScreen')">
+          <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="nav-heading">Leaderboard</div>
+      </div>
+
+      <div class="lb-filter-capsule">
+        <div class="lb-tab-btn active" onclick="switchLbFilter(this, 'weekly')">Weekly</div>
+        <div class="lb-tab-btn" onclick="switchLbFilter(this, 'monthly')">Monthly</div>
+        <div class="lb-tab-btn" onclick="switchLbFilter(this, 'fulltime')">Fulltime</div>
+      </div>
+
+      <div class="lb-table-header">
+        <div>Position</div>
+        <div>Player Name</div>
+        <div style="text-align: right;">Prize</div>
+      </div>
+
+      <div class="lb-list-container" id="leaderboardList">
+        <!-- Rankings populated here -->
+      </div>
+    </div>
+
+    <!-- ==========================================
+         SCREEN 6: REFER & EARN SCREEN
+    =========================================== -->
+    <div id="earnScreen" class="view-screen earn-bg">
+      <div class="sub-navbar" style="background: #083b66;">
+        <div class="back-btn" onclick="showScreen('homeScreen')">
+          <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="nav-heading">Refer & Earn</div>
+      </div>
+
+      <div class="earn-hero">
+        <h1 class="earn-title">Refer your friend<br>and Earn</h1>
+        <i class="fa-solid fa-gift gift-box-icon"></i>
+
+        <p class="earn-desc-box" id="earnNoticeText">
+          Invite your friends on App using your Referral Code to Earn 0 Coins in depositWallet When they join First Paid match, with minimum entry fee of 0. Your friends also get 0 Coins in depositWallet as Register Bonus!
+        </p>
+
+        <div class="referral-box-outer">
+          <div class="ref-label">Your referral code</div>
+          <div class="ref-pill-field">
+            <span id="displayReferralCode">...</span>
+            <i class="fa-regular fa-copy copy-btn-icon" onclick="copyReferralCode()" title="Copy code"></i>
+          </div>
+        </div>
+
+        <div class="share-tagline">Share your referral code via</div>
+
+        <div class="social-share-buttons">
+          <button class="share-btn btn-tg" onclick="shareReferral('telegram')">
+            <i class="fa-brands fa-telegram"></i> Telegram
+          </button>
+          <button class="share-btn btn-fb" onclick="shareReferral('facebook')">
+            <i class="fa-brands fa-facebook-f"></i> Facebook
+          </button>
+          <button class="share-btn btn-wa" onclick="shareReferral('whatsapp')">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         SCREEN 7: MENU SCREEN
+    =========================================== -->
+    <div id="menuScreen" class="view-screen menu-bg">
+      <div class="sub-navbar">
+        <div class="back-btn" onclick="showScreen('homeScreen')">
+          <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="nav-heading">Menu</div>
+      </div>
+
+      <div class="menu-profile-box">
+        <div class="menu-avatar-circle">
+          <div class="menu-avatar-inner">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </div>
+        <h2 class="menu-username" id="menuUsernameText">Player</h2>
+      </div>
+
+      <div class="menu-stats-card">
+        <div class="stat-col">
+          <div class="stat-val" id="statMatches">0</div>
+          <div class="stat-label">Matches Played</div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-val" id="statKills">0</div>
+          <div class="stat-label">Total Kills</div>
+        </div>
+        <div class="stat-col">
+          <div class="stat-val">
+            <svg width="18" height="18" viewBox="0 0 48 48">
+              <circle cx="24" cy="24" r="22" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+              <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">₹</text>
+            </svg>
+            <span id="statEarnings">0</span>
+          </div>
+          <div class="stat-label">Total Earning</div>
+        </div>
+      </div>
+
+      <div class="menu-list-wrap">
+        <div class="menu-item-card" onclick="openMenuSection('My Profile')">
+          <div class="menu-item-left"><i class="fa-solid fa-user"></i><span class="menu-item-text">My Profile</span></div>
+          <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
+        </div>
+
+        <div class="menu-item-card" onclick="openMenuSection('My Wallet')">
+          <div class="menu-item-left"><i class="fa-solid fa-wallet"></i><span class="menu-item-text">My Wallet</span></div>
+          <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
+        </div>
+
+        <div class="menu-item-card" onclick="openMenuSection('My Statistics')">
+          <div class="menu-item-left"><i class="fa-solid fa-chart-simple"></i><span class="menu-item-text">My Statistics</span></div>
+          <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
+        </div>
+
+        <div class="menu-item-card" onclick="handleTabNavigation(document.querySelectorAll('.nav-tab')[1], 'leaderboardScreen')">
+          <div class="menu-item-left"><i class="fa-solid fa-trophy"></i><span class="menu-item-text">Top Players</span></div>
+          <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
+        </div>
+
+        <div class="menu-item-card" onclick="openMenuSection('Notifications')">
+          <div class="menu-item-left"><i class="fa-solid fa-bell"></i><span class="menu-item-text">Notifications</span></div>
+          <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
+        </div>
+
+        <div class="menu-item-card" onclick="openMenuSection('Contact Us')">
+          <div class="menu-item-left"><i class="fa-solid fa-headset"></i><span class="menu-item-text">Contact Us</span></div>
+          <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
+        </div>
+
+        <div class="menu-item-card" style="cursor: default;">
+          <div class="menu-item-left"><i class="fa-solid fa-bell"></i><span class="menu-item-text">Importance Notice</span></div>
+          <label class="switch-ui">
+            <input type="checkbox" id="noticeToggle" checked onchange="handleNoticeToggle(this.checked)">
+            <span class="switch-slider"></span>
+          </label>
+        </div>
+
+        <div class="menu-item-card" onclick="openMenuSection('FAQ')">
+          <div class="menu-item-left"><i class="fa-solid fa-circle-question"></i><span class="menu-item-text">FAQ</span></div>
+          <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
+        </div>
+
+        <div class="menu-item-card" onclick="openMenuSection('About Us')">
+          <div class="menu-item-left"><i class="fa-solid fa-circle-info"></i><span class="menu-item-text">About Us</span></div>
+          <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
+        </div>
+
+        <div class="menu-item-card" onclick="openMenuSection('Privacy Policy')">
+          <div class="menu-item-left"><i class="fa-solid fa-lock"></i><span class="menu-item-text">Privacy Policy</span></div>
+          <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
+        </div>
+
+        <div class="menu-item-card" onclick="openMenuSection('Terms & Conditions')">
+          <div class="menu-item-left"><i class="fa-solid fa-shield-halved"></i><span class="menu-item-text">Terms & Conditions</span></div>
+          <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
+        </div>
+
+        <div class="menu-item-card" onclick="handleLogout()">
+          <div class="menu-item-left"><i class="fa-solid fa-power-off"></i><span class="menu-item-text">Logout</span></div>
+          <i class="fa-solid fa-chevron-right menu-item-arrow"></i>
+        </div>
+      </div>
+    </div>
+
+    <div id="walletScreen" class="view-screen" style="background:#0b1a2e">
+      <div class="sub-navbar"><div class="back-btn" onclick="showScreen(walletReturn)"><i class="fa-solid fa-chevron-left"></i></div><div class="nav-heading">Wallet</div></div>
+      <div class="wl-body">
+        <div class="wl-center"><div class="wl-total">Total Balance = <span id="wlTotal">0</span></div></div>
+        <div class="wl-sub"><span>Deposit Balance: <span id="wlDep">0</span></span><span>Win Balance: <span id="wlWin">0</span></span></div>
+        <button class="wl-btn wl-green" onclick="openRecharge()">Buy More</button>
+        <button class="wl-btn wl-red" onclick="openRedeem()">Withdraw</button>
+        <div class="wl-h">Wallet history</div><div id="wlHistory"></div>
+      </div>
+    </div>
+
+    <div id="rechargeScreen" class="view-screen" style="background:#0b1a2e">
+      <div class="sub-navbar"><div class="back-btn" onclick="showScreen('walletScreen')"><i class="fa-solid fa-chevron-left"></i></div><div class="nav-heading">Recharge</div></div>
+      <div class="wl-body">
+        <div class="wl-center" style="font-size:18px">Total Balance<div style="font-size:30px;margin-top:8px" id="rcTotal">₹ 0</div></div>
+        <div class="rc-card"><h3>Amount</h3>
+          <div class="rc-input"><span>₹</span><input id="rcAmount" type="number" inputmode="numeric" placeholder="11 ~ 1000"></div>
+          <div class="rc-minmax"><span>Minimum:₹ 11</span><span>Maximum:₹ 1000</span></div>
+          <div class="rc-chips"><div onclick="setRechargeAmt(20)">₹20</div><div onclick="setRechargeAmt(50)">₹50</div><div onclick="setRechargeAmt(100)">₹100</div><div onclick="setRechargeAmt(200)">₹200</div><div onclick="setRechargeAmt(500)">₹500</div><div onclick="setRechargeAmt(1000)">₹1000</div></div>
+          <button class="rc-go" onclick="startRecharge()">Recharge</button>
+        </div>
+        <div class="wl-h" style="font-size:19px;border-bottom:1px solid #fff;padding-bottom:8px">Deposits History</div><div id="rcHistory"></div>
+      </div>
+    </div>
+
+    <div id="redeemScreen" class="view-screen" style="background:#0b1a2e">
+      <div class="sub-navbar"><div class="back-btn" onclick="showScreen('walletScreen')"><i class="fa-solid fa-chevron-left"></i></div><div class="nav-heading">Redeem Won Coins</div></div>
+      <div class="wl-body"><div class="wl-center pos" style="margin-bottom:16px">Win Balance: <span id="rdWin">₹ 0</span></div><div id="rdList"></div></div>
+    </div>
+
+    <div id="infoScreen" class="view-screen" style="background:#0b1a2e">
+      <div class="sub-navbar"><div class="back-btn" onclick="closeInfo()"><i class="fa-solid fa-chevron-left"></i></div><div class="nav-heading" id="infoTitle"></div></div>
+      <div id="infoBody" style="padding:18px 16px 90px;font-size:14px;color:#e2e8f0"></div>
+    </div>
+
+    <!-- Fixed Bottom Navigation Bar -->
+    <nav class="bottom-navbar" id="appBottomNav">
+      <div class="nav-tab" onclick="handleTabNavigation(this, 'earnScreen')">
+        <i class="fa-solid fa-gift"></i>
+        <span>Earn</span>
+      </div>
+      <div class="nav-tab" onclick="handleTabNavigation(this, 'leaderboardScreen')">
+        <i class="fa-solid fa-trophy"></i>
+        <span>Leaderboard</span>
+      </div>
+      <div class="nav-tab active" onclick="handleTabNavigation(this, 'homeScreen')">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </div>
+      <div class="nav-tab" onclick="handleTabNavigation(this, 'menuScreen')">
+        <i class="fa-solid fa-ellipsis"></i>
+        <span>Menu</span>
+      </div>
+    </nav>
+
+    <!-- Join Tournament Modal -->
+    <div class="modal-backdrop" id="joinModal">
+      <div class="modal-card">
+        <div class="modal-title">
+          <span id="modalMatchTitle">Join Match</span>
+          <i class="fa-solid fa-xmark modal-close-icon" onclick="closeJoinModal()"></i>
+        </div>
+        <div class="modal-fee-banner">
+          <span>Entry Fee:</span>
+          <span class="modal-fee-val">
+            <svg width="16" height="16" viewBox="0 0 48 48">
+              <circle cx="24" cy="24" r="22" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+              <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">₹</text>
+            </svg>
+            <span id="modalFeeText">0</span>
+          </span>
+        </div>
+        <input type="text" id="modalPlayerIgn" class="modal-input" placeholder="Free Fire In-Game Name (IGN)" required />
+        <input type="text" id="modalPlayerUid" class="modal-input" placeholder="Free Fire UID (Numeric)" required />
+        <button type="button" class="btn-modal-confirm" onclick="confirmJoinMatch()">Confirm & Join</button>
+      </div>
+    </div>
+
+    <!-- Wallet modal (UTR / UPI entry) -->
+    <div class="modal-backdrop" id="walletModal">
+      <div class="modal-card">
+        <div class="modal-title"><span id="wmTitle"></span><i class="fa-solid fa-xmark modal-close-icon" onclick="closeWalletModal()"></i></div>
+        <div id="wmBody"></div>
+        <button type="button" class="btn-modal-confirm" id="wmBtn"></button>
+      </div>
+    </div>
+
+    <!-- Global Toast Notification -->
+    <div class="toast-box" id="appToast"></div>
+
+  </div>
+
+  <script>
+    // ==========================================
+    // 1. FIREBASE CONFIGURATION
+    // ==========================================
+    const firebaseConfig = {
+  "apiKey": "AIzaSyAbLUoHOZ_4svA1Xtr9nHsSGODyVA-3oGY",
+  "authDomain": "eagle-e-sport-35478.firebaseapp.com",
+  "databaseURL": "https://eagle-e-sport-35478-default-rtdb.firebaseio.com",
+  "projectId": "eagle-e-sport-35478",
+  "storageBucket": "eagle-e-sport-35478.firebasestorage.app",
+  "messagingSenderId": "80439439795",
+  "appId": "1:80439439795:web:da57015602b53b3edf1bc6",
+  "measurementId": "G-KQRCH8HKBR"
+};
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.database();
+
+    let currentUserData = null;
+    let currentSelectedGame = "BR FULL MAP";
+    let currentContestStatus = "upcoming";
+    let selectedMatchForJoin = null;
+
+    // Toast helper
+    let toastTimer = null;
+    function showToast(message) {
+      const toast = document.getElementById('appToast');
+      toast.textContent = message;
+      toast.style.display = 'block';
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => { toast.style.display = 'none'; }, 3000);
+    }
+
+    // ==========================================
+    // NAVIGATION CONTROLLER
+    // ==========================================
+    const TAB_INDEX = { earnScreen: 0, leaderboardScreen: 1, homeScreen: 2, contestsScreen: 2, menuScreen: 3 };
+
+    function showScreen(screenId) {
+      document.querySelectorAll('.view-screen').forEach(scr => scr.classList.remove('active'));
+      const target = document.getElementById(screenId);
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo(0, 0);
+      }
+
+      // Hide bottom navbar on splash/auth screens
+      const bNav = document.getElementById('appBottomNav');
+      if (['splashScreen', 'loginScreen', 'registerScreen'].includes(screenId)) {
+        bNav.style.display = 'none';
+      } else {
+        bNav.style.display = 'flex';
+      }
+
+      // Keep bottom-tab highlight in sync (also when using back buttons)
+      if (Object.prototype.hasOwnProperty.call(TAB_INDEX, screenId)) {
+        document.querySelectorAll('.nav-tab').forEach((t, i) => t.classList.toggle('active', i === TAB_INDEX[screenId]));
+      }
+    }
+
+    function resetLbTabs() {
+      document.querySelectorAll('.lb-tab-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+    }
+
+    function handleTabNavigation(tabElement, targetScreenId) {
+      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+      tabElement.classList.add('active');
+      showScreen(targetScreenId);
+
+      if (targetScreenId === 'leaderboardScreen') {
+        resetLbTabs();
+        loadLeaderboard('weekly');
+      }
+    }
+
+    // Splash: wait for BOTH the 1.8s timer and Firebase's saved-login check,
+    // otherwise logged-in users can wrongly land on the login screen.
+    let splashDone = false, authChecked = false;
+    function routeAfterSplash() {
+      if (!splashDone || !authChecked) return;
+      const cur = document.querySelector('.view-screen.active');
+      if (cur && cur.id !== 'splashScreen') return; // user already moved on
+      showScreen(auth.currentUser ? 'homeScreen' : 'loginScreen');
+    }
+    showScreen('splashScreen'); // also hides the bottom navbar during splash
+    setTimeout(() => { splashDone = true; routeAfterSplash(); }, 1800);
+
+    function togglePass(inputId, btn) {
+      const field = document.getElementById(inputId);
+      if (field.type === "password") {
+        field.type = "text";
+        btn.textContent = "Hide";
+      } else {
+        field.type = "password";
+        btn.textContent = "Show";
+      }
+    }
+
+    // ==========================================
+    // 2. AUTHENTICATION LOGIC
+    // ==========================================
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const firstName = document.getElementById('regFirstName').value.trim();
+      const lastName = document.getElementById('regLastName').value.trim();
+      const username = document.getElementById('regUsername').value.trim();
+      const phone = document.getElementById('regPhone').value.trim();
+      const email = document.getElementById('regEmail').value.trim();
+      const password = document.getElementById('regPassword').value;
+      const referral = document.getElementById('regReferral').value.trim();
+
+      auth.createUserWithEmailAndPassword(email, password)
+        .then(cred => {
+          const uid = cred.user.uid;
+          const userData = {
+            firstName: firstName,
+            lastName: lastName,
+            username: username,
+            phone: phone,
+            email: email,
+            referredByCode: referral.toUpperCase().replace(/[^A-Z0-9]/g, ''), referralCode: genCode(),
+            walletBalance: 0,
+            matchesPlayed: 0,
+            totalKills: 0,
+            totalEarnings: 0,
+            createdAt: Date.now()
+          };
+          return finishRegister(uid, userData, referral !== '');
+        })
+        .then(status => {
+          showToast(status === 'invalid'
+            ? 'Registered! But the referral code is invalid, so no bonus was added.'
+            : 'Registration successful!');
+          showScreen('homeScreen');
+        })
+        .catch(err => showToast(err.message));
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value;
+
+      auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+          showToast('Welcome back!');
+          showScreen('homeScreen');
+        })
+        .catch(err => showToast("Login Error: " + err.message));
+    });
+
+    function handleLogout() {
+      if (confirm("Are you sure you want to log out?")) {
+        auth.signOut();
+        showScreen('loginScreen');
+      }
+    }
+
+    function handleForgetPass() {
+      const email = prompt("Enter your registered email for password reset:");
+      if (email) {
+        auth.sendPasswordResetEmail(email)
+          .then(() => showToast("Reset link sent to your email!"))
+          .catch(e => showToast(e.message));
+      }
+    }
+
+    // ==========================================
+    // 3. REALTIME SYNC (USER PROFILE & WALLET)
+    // ==========================================
+    let userRef = null, refCodeCheckedFor = null;
+
+    function resetUserUI() {
+      document.getElementById('homeWalletBalance').textContent = '₹ 0';
+      document.getElementById('menuUsernameText').textContent = 'player';
+      document.getElementById('statMatches').textContent = 0;
+      document.getElementById('statKills').textContent = 0;
+      document.getElementById('statEarnings').textContent = 0;
+      document.getElementById('displayReferralCode').textContent = '...';
+    }
+
+    // Every user must have a referral code AND it must be registered in referralCodes/
+    // 
+    function ensureReferralCode(uid, data) {
+      if (refCodeCheckedFor === uid) return;
+      refCodeCheckedFor = uid;
+      const claim = (code, tries) => db.ref('referralCodes/' + code).once('value').then(snap => {
+        if (snap.exists() && snap.val() !== uid) {
+          if (data.referralCode || tries >= 5) return;
+          return claim(genCode(), tries + 1);
+        }
+        return Promise.all([
+          snap.exists() ? null : db.ref('referralCodes/' + code).set(uid),
+          data.referralCode ? null : db.ref('users/' + uid + '/referralCode').set(code)
+        ]);
+      });
+      claim(data.referralCode || genCode(), 0).catch(() => {});
+    }
+
+    auth.onAuthStateChanged(user => {
+      // Detach the previous user's listener (prevents duplicate / stale listeners)
+      if (userRef) { userRef.off(); userRef = null; }
+      authChecked = true;
+
+      if (!user) {
+        currentUserData = null;
+        refCodeCheckedFor = null;
+        resetUserUI();
+        if (splashDone) {
+          const cur = document.querySelector('.view-screen.active');
+          if (!cur || !['loginScreen', 'registerScreen'].includes(cur.id)) showScreen('loginScreen');
+        }
+        routeAfterSplash();
+        return;
+      }
+
+      userRef = db.ref('users/' + user.uid);
+      userRef.on('value', snap => {
+        const data = snap.val();
+        if (data && data.banned === true) { // banned by admin
+          currentUserData = null;
+          showToast('Your account has been banned. Please contact support.');
+          auth.signOut();
+          return;
+        }
+        if (data) {
+          currentUserData = data;
+          const displayName = data.username || user.displayName || "Player";
+          const balance = data.walletBalance || 0;
+
+          // Sync Header & Menu
+          document.getElementById('homeWalletBalance').textContent = `₹ ${balance}`;
+          document.getElementById('menuUsernameText').textContent = displayName.toLowerCase();
+          document.getElementById('statMatches').textContent = data.matchesPlayed || 0;
+          document.getElementById('statKills').textContent = data.totalKills || 0;
+          document.getElementById('statEarnings').textContent = data.totalEarnings || 0;
+          document.getElementById('displayReferralCode').textContent = data.referralCode || '...';
+          ensureReferralCode(user.uid, data);
+          refreshWalletUI();
+        }
+      }, err => console.warn('User sync failed:', err.message));
+      routeAfterSplash();
+      if (vipPendingOrderId) {
+        const id = vipPendingOrderId;
+        vipPendingOrderId = null;
+        checkPaymentStatus(id);
+      }
+    });
+
+    // Realtime Admin Notice
+    db.ref('app_config/notice').on('value', snap => {
+      if (snap.exists()) document.getElementById('noticeMarquee').textContent = snap.val();
+    });
+    let referCfg = {}, pagesCfg = {};
+    let brandName = '';
+    const brandLabel = () => brandName || 'App';
+    let lastBrand = null;
+    // Logo + app name come only from admin panel (Settings > App logo & name). Nothing is hardcoded.
+    function applyBrand(cfg) {
+      const logo = safeImg(cfg && cfg.logo), title = ((cfg && cfg.title) || '').trim();
+      const key = logo + '|' + title;
+      if (key === lastBrand) return;
+      lastBrand = key;
+      brandName = title;
+      document.getElementById('splashTitle').textContent = title;
+      document.getElementById('homeUserName').textContent = title;
+      document.title = title ? title + ' - Esports Platform' : 'Esports Platform';
+      ['splashLogoBox', 'homeLogoBox'].forEach(id => {
+        const box = document.getElementById(id);
+        box.innerHTML = '';
+        box.style.display = 'none';
+        if (!logo) return;
+        const img = new Image();
+        img.alt = 'Logo';
+        img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover';
+        img.onload = () => { box.appendChild(img); box.style.display = 'flex'; };
+        img.src = logo;
+      });
+      try { localStorage.setItem('brandCfg', JSON.stringify({ logo, title })); } catch (e) {}
+    }
+    // show last known logo/name instantly on splash, then Firebase refreshes it
+    try { applyBrand(JSON.parse(localStorage.getItem('brandCfg') || '{}')); } catch (e) {}
+    db.ref('app_config/splash').on('value', snap => applyBrand(snap.val() || {}));
+    db.ref('app_config/refer').on('value', snap => {
+      referCfg = snap.val() || {};
+      document.getElementById('earnNoticeText').textContent =
+        `Invite your friends using your Referral Code and earn ₹${referCfg.reward || 0} in wallet when they join their first paid match (minimum entry fee ₹${referCfg.minFee || 0}). Your friends also get ₹${referCfg.friendBonus || 0} as Register Bonus!`;
+    });
+    db.ref('app_config/pages').on('value', snap => { pagesCfg = snap.val() || {}; });
+    function applyNoticeToggle() {
+      let on = true;
+      try { on = localStorage.getItem('gx_notice') !== 'off'; } catch (e) {}
+      document.getElementById('noticeToggle').checked = on;
+      document.querySelector('.notice-bar').style.display = on ? '' : 'none';
+    }
+    applyNoticeToggle();
+
+    // Realtime Dynamic Sliders
+    db.ref('sliders').on('value', snap => {
+      const sliders = snap.val();
+      renderSliders(sliders ? Object.values(sliders) : []);
+    });
+
+    // Matches added per game (upcoming + ongoing) shown on each game card
+    let matchCounts = {}, gamesCache = [], tUp = {}, tOn = {};
+    function recountMatches() {
+      matchCounts = {};
+      [tUp, tOn].forEach(o => Object.values(o).forEach(m => { if (m && m.game) matchCounts[m.game] = (matchCounts[m.game] || 0) + 1; }));
+      if (gamesCache.length) renderGames(gamesCache);
+    }
+    db.ref('tournaments/upcoming').on('value', snap => { tUp = snap.val() || {}; recountMatches(); });
+    db.ref('tournaments/ongoing').on('value', snap => { tOn = snap.val() || {}; recountMatches(); });
+
+    // Realtime Dynamic Esports Games
+    db.ref('esports_games').on('value', snap => {
+      const games = snap.val();
+      renderGames(games ? Object.values(games) : []);
+    });
+
+    // Slider carousel logic
+    let sliderTimer = null;
+    function renderSliders(sliderList) {
+      const track = document.getElementById('sliderTrack');
+      const dotsContainer = document.getElementById('sliderDots');
+      track.innerHTML = '';
+      dotsContainer.innerHTML = '';
+      const bannerBox = document.querySelector('.banner-container');
+      if (bannerBox) bannerBox.style.display = sliderList.length ? '' : 'none'; // no slider uploaded = no banner
+      if (!sliderList.length) { if (sliderTimer) clearInterval(sliderTimer); return; }
+
+      sliderList.forEach((slide, idx) => {
+        const item = document.createElement('div');
+        item.className = `slider-item ${idx === 0 ? 'active' : ''}`;
+        item.style.backgroundImage = bgImage(slide.imgUrl, 0.1, 0.6);
+        item.onclick = () => {
+          if (/^https?:\/\//i.test(slide.redirectUrl || '')) window.open(slide.redirectUrl, '_blank', 'noopener');
         };
 
-        firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
-        const db = firebase.database();
-
-        let currentUserData = null;
-        let currentSelectedGame = "BR FULL MAP";
-        let currentContestStatus = "upcoming";
-        let selectedMatchForJoin = null;
-
-        // Toast helper
-        let toastTimer = null;
-
-        function showToast(message) {
-            const toast = document.getElementById('appToast');
-            toast.textContent = message;
-            toast.style.display = 'block';
-            clearTimeout(toastTimer);
-            toastTimer = setTimeout(() => {
-                toast.style.display = 'none';
-            }, 3000);
+        if (slide.buttonText) {
+          const btn = document.createElement('button');
+          btn.className = 'slider-overlay-btn';
+          btn.textContent = slide.buttonText;
+          item.appendChild(btn);
         }
 
-        // ==========================================
-        // NAVIGATION CONTROLLER
-        // ==========================================
-        const TAB_INDEX = {
-            earnScreen: 0,
-            leaderboardScreen: 1,
-            homeScreen: 2,
-            contestsScreen: 2,
-            menuScreen: 3
-        };
+        track.appendChild(item);
 
-        function showScreen(screenId) {
-            document.querySelectorAll('.view-screen').forEach(scr => scr.classList.remove('active'));
-            const target = document.getElementById(screenId);
-            if (target) {
-                target.classList.add('active');
-                window.scrollTo(0, 0);
-            }
+        const dot = document.createElement('div');
+        dot.className = `dot ${idx === 0 ? 'active' : ''}`;
+        dotsContainer.appendChild(dot);
+      });
 
-            // Hide bottom navbar on splash/auth screens
-            const bNav = document.getElementById('appBottomNav');
-            if (['splashScreen', 'loginScreen', 'registerScreen'].includes(screenId)) {
-                bNav.style.display = 'none';
-            } else {
-                bNav.style.display = 'flex';
-            }
+      let current = 0;
+      if (sliderTimer) clearInterval(sliderTimer);
+      sliderTimer = setInterval(() => {
+        const items = document.querySelectorAll('.slider-item');
+        const dots = document.querySelectorAll('.dot');
+        if (items.length <= 1) return;
 
-            // Keep bottom-tab highlight in sync (also when using back buttons)
-            if (Object.prototype.hasOwnProperty.call(TAB_INDEX, screenId)) {
-                document.querySelectorAll('.nav-tab').forEach((t, i) => t.classList.toggle('active', i === TAB_INDEX[screenId]));
-            }
-        }
+        items[current].classList.remove('active');
+        dots[current].classList.remove('active');
 
-        function resetLbTabs() {
-            document.querySelectorAll('.lb-tab-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
-        }
+        current = (current + 1) % items.length;
 
-        function handleTabNavigation(tabElement, targetScreenId) {
-            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-            tabElement.classList.add('active');
-            showScreen(targetScreenId);
+        items[current].classList.add('active');
+        dots[current].classList.add('active');
+      }, 3500);
+    }
 
-            if (targetScreenId === 'leaderboardScreen') {
-                resetLbTabs();
-                loadLeaderboard('weekly');
-            }
-        }
+    // Render Esports Grid
+    function renderGames(gameList) {
+      gamesCache = gameList;
+      const grid = document.getElementById('esportsGamesList');
+      grid.innerHTML = '';
 
-        // Splash: wait for BOTH the 1.8s timer and Firebase's saved-login check,
-        // otherwise logged-in users can wrongly land on the login screen.
-        let splashDone = false,
-            authChecked = false;
+      gameList.forEach(game => {
+        const card = document.createElement('div');
+        card.className = 'game-card';
+        card.onclick = () => openContestsScreen(game.name, 'upcoming');
 
-        function routeAfterSplash() {
-            if (!splashDone || !authChecked) return;
-            const cur = document.querySelector('.view-screen.active');
-            if (cur && cur.id !== 'splashScreen') return; // user already moved on
-            showScreen(auth.currentUser ? 'homeScreen' : 'loginScreen');
-        }
-        showScreen('splashScreen'); // also hides the bottom navbar during splash
-        setTimeout(() => {
-            splashDone = true;
-            routeAfterSplash();
-        }, 1800);
-
-        function togglePass(inputId, btn) {
-            const field = document.getElementById(inputId);
-            if (field.type === "password") {
-                field.type = "text";
-                btn.textContent = "Hide";
-            } else {
-                field.type = "password";
-                btn.textContent = "Show";
-            }
-        }
-
-        // ==========================================
-        // 2. AUTHENTICATION LOGIC
-        // ==========================================
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const firstName = document.getElementById('regFirstName').value.trim();
-            const lastName = document.getElementById('regLastName').value.trim();
-            const username = document.getElementById('regUsername').value.trim();
-            const phone = document.getElementById('regPhone').value.trim();
-            const email = document.getElementById('regEmail').value.trim();
-            const password = document.getElementById('regPassword').value;
-            const referral = document.getElementById('regReferral').value.trim();
-
-            auth.createUserWithEmailAndPassword(email, password)
-                .then(cred => {
-                    const uid = cred.user.uid;
-                    const userData = {
-                        firstName: firstName,
-                        lastName: lastName,
-                        username: username,
-                        phone: phone,
-                        email: email,
-                        referredByCode: referral.toUpperCase().replace(/[^A-Z0-9]/g, ''),
-                        referralCode: genCode(),
-                        walletBalance: 0,
-                        matchesPlayed: 0,
-                        totalKills: 0,
-                        totalEarnings: 0,
-                        createdAt: Date.now()
-                    };
-                    return finishRegister(uid, userData, referral !== '');
-                })
-                .then(status => {
-                    showToast(status === 'invalid' ?
-                        'Registered! But the referral code is invalid, so no bonus was added.' :
-                        'Registration successful!');
-                    showScreen('homeScreen');
-                })
-                .catch(err => showToast(err.message));
-        });
-
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('loginEmail').value.trim();
-            const password = document.getElementById('loginPassword').value;
-
-            auth.signInWithEmailAndPassword(email, password)
-                .then(() => {
-                    showToast('Welcome back!');
-                    showScreen('homeScreen');
-                })
-                .catch(err => showToast("Login Error: " + err.message));
-        });
-
-        function handleLogout() {
-            if (confirm("Are you sure you want to log out?")) {
-                auth.signOut();
-                showScreen('loginScreen');
-            }
-        }
-
-        function handleForgetPass() {
-            const email = prompt("Enter your registered email for password reset:");
-            if (email) {
-                auth.sendPasswordResetEmail(email)
-                    .then(() => showToast("Reset link sent to your email!"))
-                    .catch(e => showToast(e.message));
-            }
-        }
-
-        // ==========================================
-        // 3. REALTIME SYNC (USER PROFILE & WALLET)
-        // ==========================================
-        let userRef = null,
-            refCodeCheckedFor = null;
-
-        function resetUserUI() {
-            document.getElementById('homeWalletBalance').textContent = '₹ 0';
-            document.getElementById('menuUsernameText').textContent = 'player';
-            document.getElementById('statMatches').textContent = 0;
-            document.getElementById('statKills').textContent = 0;
-            document.getElementById('statEarnings').textContent = 0;
-            document.getElementById('displayReferralCode').textContent = '...';
-        }
-
-        // Every user must have a referral code AND it must be registered in referralCodes/
-        // 
-        function ensureReferralCode(uid, data) {
-            if (refCodeCheckedFor === uid) return;
-            refCodeCheckedFor = uid;
-            const claim = (code, tries) => db.ref('referralCodes/' + code).once('value').then(snap => {
-                if (snap.exists() && snap.val() !== uid) {
-                    if (data.referralCode || tries >= 5) return;
-                    return claim(genCode(), tries + 1);
-                }
-                return Promise.all([
-                    snap.exists() ? null : db.ref('referralCodes/' + code).set(uid),
-                    data.referralCode ? null : db.ref('users/' + uid + '/referralCode').set(code)
-                ]);
-            });
-            claim(data.referralCode || genCode(), 0).catch(() => {});
-        }
-
-        auth.onAuthStateChanged(user => {
-            // Detach the previous user's listener (prevents duplicate / stale listeners)
-            if (userRef) {
-                userRef.off();
-                userRef = null;
-            }
-            authChecked = true;
-
-            if (!user) {
-                currentUserData = null;
-                refCodeCheckedFor = null;
-                resetUserUI();
-                if (splashDone) {
-                    const cur = document.querySelector('.view-screen.active');
-                    if (!cur || !['loginScreen', 'registerScreen'].includes(cur.id)) showScreen('loginScreen');
-                }
-                routeAfterSplash();
-                return;
-            }
-
-            userRef = db.ref('users/' + user.uid);
-            userRef.on('value', snap => {
-                const data = snap.val();
-                if (data && data.banned === true) { // banned by admin
-                    currentUserData = null;
-                    showToast('Your account has been banned. Please contact support.');
-                    auth.signOut();
-                    return;
-                }
-                if (data) {
-                    currentUserData = data;
-                    const displayName = data.username || user.displayName || "Player";
-                    const balance = data.walletBalance || 0;
-
-                    // Sync Header & Menu
-                    document.getElementById('homeWalletBalance').textContent = `₹ ${balance}`;
-                    document.getElementById('menuUsernameText').textContent = displayName.toLowerCase();
-                    document.getElementById('statMatches').textContent = data.matchesPlayed || 0;
-                    document.getElementById('statKills').textContent = data.totalKills || 0;
-                    document.getElementById('statEarnings').textContent = data.totalEarnings || 0;
-                    document.getElementById('displayReferralCode').textContent = data.referralCode || '...';
-                    ensureReferralCode(user.uid, data);
-                    refreshWalletUI();
-                }
-            }, err => console.warn('User sync failed:', err.message));
-            routeAfterSplash();
-            vipResume();
-        });
-
-        // Realtime Admin Notice
-        db.ref('app_config/notice').on('value', snap => {
-            if (snap.exists()) document.getElementById('noticeMarquee').textContent = snap.val();
-        });
-        let referCfg = {},
-            pagesCfg = {};
-        let brandName = '';
-        const brandLabel = () => brandName || 'App';
-        let lastBrand = null;
-        // Logo + app name come only from admin panel (Settings > App logo & name). Nothing is hardcoded.
-        function applyBrand(cfg) {
-            const logo = safeImg(cfg && cfg.logo),
-                title = ((cfg && cfg.title) || '').trim();
-            const key = logo + '|' + title;
-            if (key === lastBrand) return;
-            lastBrand = key;
-            brandName = title;
-            document.getElementById('splashTitle').textContent = title;
-            document.getElementById('homeUserName').textContent = title;
-            document.title = title ? title + ' - Esports Platform' : 'Esports Platform';
-            ['splashLogoBox', 'homeLogoBox'].forEach(id => {
-                const box = document.getElementById(id);
-                box.innerHTML = '';
-                box.style.display = 'none';
-                if (!logo) return;
-                const img = new Image();
-                img.alt = 'Logo';
-                img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover';
-                img.onload = () => {
-                    box.appendChild(img);
-                    box.style.display = 'flex';
-                };
-                img.src = logo;
-            });
-            try {
-                localStorage.setItem('brandCfg', JSON.stringify({
-                    logo,
-                    title
-                }));
-            } catch (e) {}
-        }
-        // show last known logo/name instantly on splash, then Firebase refreshes it
-        try {
-            applyBrand(JSON.parse(localStorage.getItem('brandCfg') || '{}'));
-        } catch (e) {}
-        db.ref('app_config/splash').on('value', snap => applyBrand(snap.val() || {}));
-        db.ref('app_config/refer').on('value', snap => {
-            referCfg = snap.val() || {};
-            document.getElementById('earnNoticeText').textContent =
-                `Invite your friends using your Referral Code and earn ₹${referCfg.reward || 0} in wallet when they join their first paid match (minimum entry fee ₹${referCfg.minFee || 0}). Your friends also get ₹${referCfg.friendBonus || 0} as Register Bonus!`;
-        });
-        db.ref('app_config/pages').on('value', snap => {
-            pagesCfg = snap.val() || {};
-        });
-
-        function applyNoticeToggle() {
-            let on = true;
-            try {
-                on = localStorage.getItem('gx_notice') !== 'off';
-            } catch (e) {}
-            document.getElementById('noticeToggle').checked = on;
-            document.querySelector('.notice-bar').style.display = on ? '' : 'none';
-        }
-        applyNoticeToggle();
-
-        // Realtime Dynamic Sliders
-        db.ref('sliders').on('value', snap => {
-            const sliders = snap.val();
-            renderSliders(sliders ? Object.values(sliders) : []);
-        });
-
-        // Matches added per game (upcoming + ongoing) shown on each game card
-        let matchCounts = {},
-            gamesCache = [],
-            tUp = {},
-            tOn = {};
-
-        function recountMatches() {
-            matchCounts = {};
-            [tUp, tOn].forEach(o => Object.values(o).forEach(m => {
-                if (m && m.game) matchCounts[m.game] = (matchCounts[m.game] || 0) + 1;
-            }));
-            if (gamesCache.length) renderGames(gamesCache);
-        }
-        db.ref('tournaments/upcoming').on('value', snap => {
-            tUp = snap.val() || {};
-            recountMatches();
-        });
-        db.ref('tournaments/ongoing').on('value', snap => {
-            tOn = snap.val() || {};
-            recountMatches();
-        });
-
-        // Realtime Dynamic Esports Games
-        db.ref('esports_games').on('value', snap => {
-            const games = snap.val();
-            renderGames(games ? Object.values(games) : []);
-        });
-
-        // Slider carousel logic
-        let sliderTimer = null;
-
-        function renderSliders(sliderList) {
-            const track = document.getElementById('sliderTrack');
-            const dotsContainer = document.getElementById('sliderDots');
-            track.innerHTML = '';
-            dotsContainer.innerHTML = '';
-            const bannerBox = document.querySelector('.banner-container');
-            if (bannerBox) bannerBox.style.display = sliderList.length ? '' : 'none'; // no slider uploaded = no banner
-            if (!sliderList.length) {
-                if (sliderTimer) clearInterval(sliderTimer);
-                return;
-            }
-
-            sliderList.forEach((slide, idx) => {
-                const item = document.createElement('div');
-                item.className = `slider-item ${idx === 0 ? 'active' : ''}`;
-                item.style.backgroundImage = bgImage(slide.imgUrl, 0.1, 0.6);
-                item.onclick = () => {
-                    if (/^https?:\/\//i.test(slide.redirectUrl || '')) window.open(slide.redirectUrl, '_blank', 'noopener');
-                };
-
-                if (slide.buttonText) {
-                    const btn = document.createElement('button');
-                    btn.className = 'slider-overlay-btn';
-                    btn.textContent = slide.buttonText;
-                    item.appendChild(btn);
-                }
-
-                track.appendChild(item);
-
-                const dot = document.createElement('div');
-                dot.className = `dot ${idx === 0 ? 'active' : ''}`;
-                dotsContainer.appendChild(dot);
-            });
-
-            let current = 0;
-            if (sliderTimer) clearInterval(sliderTimer);
-            sliderTimer = setInterval(() => {
-                const items = document.querySelectorAll('.slider-item');
-                const dots = document.querySelectorAll('.dot');
-                if (items.length <= 1) return;
-
-                items[current].classList.remove('active');
-                dots[current].classList.remove('active');
-
-                current = (current + 1) % items.length;
-
-                items[current].classList.add('active');
-                dots[current].classList.add('active');
-            }, 3500);
-        }
-
-        // Render Esports Grid
-        function renderGames(gameList) {
-            gamesCache = gameList;
-            const grid = document.getElementById('esportsGamesList');
-            grid.innerHTML = '';
-
-            gameList.forEach(game => {
-                const card = document.createElement('div');
-                card.className = 'game-card';
-                card.onclick = () => openContestsScreen(game.name, 'upcoming');
-
-                card.innerHTML = `
+        card.innerHTML = `
           <div class="game-card-img-wrap">
             ${safeImg(game.imgUrl) ? `<img src="${escAttr(safeImg(game.imgUrl))}" alt="${escAttr(game.name)}" decoding="async" onerror="this.style.display='none'">` : ''}
           </div>
@@ -2733,106 +2657,87 @@
             </div>
           </div>
         `;
-                grid.appendChild(card);
-            });
+        grid.appendChild(card);
+      });
+    }
+
+    // ==========================================
+    // 4. CONTESTS / MATCH LIST SYSTEM
+    // ==========================================
+    function openContestsScreen(gameName, initialTab = 'upcoming') {
+      currentSelectedGame = gameName;
+      document.getElementById('contestGameTitle').textContent = `${gameName} Contests`;
+      showScreen('contestsScreen');
+      switchContestTab(initialTab);
+    }
+
+    function switchContestTab(status) {
+      currentContestStatus = status;
+      ['Ongoing', 'Upcoming', 'Resulted'].forEach(t => {
+        const el = document.getElementById(`tab${t}`);
+        if (t.toLowerCase() === status.toLowerCase()) {
+          el.classList.add('active');
+        } else {
+          el.classList.remove('active');
         }
+      });
+      loadContestMatches();
+    }
 
-        // ==========================================
-        // 4. CONTESTS / MATCH LIST SYSTEM
-        // ==========================================
-        function openContestsScreen(gameName, initialTab = 'upcoming') {
-            currentSelectedGame = gameName;
-            document.getElementById('contestGameTitle').textContent = `${gameName} Contests`;
-            showScreen('contestsScreen');
-            switchContestTab(initialTab);
-        }
+    let matchRef = null, matchRenderToken = 0;
+    function loadContestMatches() {
+      const listContainer = document.getElementById('contestCardsList');
+      listContainer.innerHTML = '';
 
-        function switchContestTab(status) {
-            currentContestStatus = status;
-            ['Ongoing', 'Upcoming', 'Resulted'].forEach(t => {
-                const el = document.getElementById(`tab${t}`);
-                if (t.toLowerCase() === status.toLowerCase()) {
-                    el.classList.add('active');
-                } else {
-                    el.classList.remove('active');
-                }
-            });
-            loadContestMatches();
-        }
+      if (matchRef) matchRef.off();
+      const status = currentContestStatus, game = currentSelectedGame, isMine = game === 'My Matches';
+      matchRef = db.ref(`tournaments/${status}`);
+      matchRef.on('value', snap => {
+        const token = ++matchRenderToken;
+        const data = snap.val() || {};
+        const all = Object.keys(data).map(k => ({ ...data[k], key: k }));
+        const show = list => { if (token === matchRenderToken) renderMatchCards(list, status, isMine); };
 
-        let matchRef = null,
-            matchRenderToken = 0;
+        const user = auth.currentUser;
+        const base = isMine ? all : all.filter(m => m.game === game);
+        const plain = () => show(isMine ? [] : base.map(m => ({ ...m, myCount: 0 })));
+        if (!user || (!isMine && status === 'resulted')) return plain();
+        // how many times THIS user joined each match (Join -> View, join limit)
+        Promise.all(base.map(m => db.ref(`match_participants/${m.id || m.key}/${user.uid}`).once('value').then(s => s.exists() ? (Number((s.val() || {}).count) || 1) : 0)))
+          .then(c => { const list = base.map((m, i) => ({ ...m, myCount: c[i] })); show(isMine ? list.filter(m => m.myCount > 0) : list); })
+          .catch(plain);
+      });
+    }
 
-        function loadContestMatches() {
-            const listContainer = document.getElementById('contestCardsList');
-            listContainer.innerHTML = '';
+    const COIN_SVG = '<svg width="15" height="15" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#f59e0b" stroke="#d97706" stroke-width="2"/><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">₹</text></svg>';
 
-            if (matchRef) matchRef.off();
-            const status = currentContestStatus,
-                game = currentSelectedGame,
-                isMine = game === 'My Matches';
-            matchRef = db.ref(`tournaments/${status}`);
-            matchRef.on('value', snap => {
-                const token = ++matchRenderToken;
-                const data = snap.val() || {};
-                const all = Object.keys(data).map(k => ({
-                    ...data[k],
-                    key: k
-                }));
-                const show = list => {
-                    if (token === matchRenderToken) renderMatchCards(list, status, isMine);
-                };
+    function renderMatchCards(matches, status, isMine) {
+      const listContainer = document.getElementById('contestCardsList');
+      listContainer.innerHTML = '';
 
-                const user = auth.currentUser;
-                const base = isMine ? all : all.filter(m => m.game === game);
-                const plain = () => show(isMine ? [] : base.map(m => ({
-                    ...m,
-                    myCount: 0
-                })));
-                if (!user || (!isMine && status === 'resulted')) return plain();
-                // how many times THIS user joined each match (Join -> View, join limit)
-                Promise.all(base.map(m => db.ref(`match_participants/${m.id || m.key}/${user.uid}`).once('value').then(s => s.exists() ? (Number((s.val() || {}).count) || 1) : 0)))
-                    .then(c => {
-                        const list = base.map((m, i) => ({
-                            ...m,
-                            myCount: c[i]
-                        }));
-                        show(isMine ? list.filter(m => m.myCount > 0) : list);
-                    })
-                    .catch(plain);
-            });
-        }
-
-        const COIN_SVG = '<svg width="15" height="15" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#f59e0b" stroke="#d97706" stroke-width="2"/><text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">₹</text></svg>';
-
-        function renderMatchCards(matches, status, isMine) {
-            const listContainer = document.getElementById('contestCardsList');
-            listContainer.innerHTML = '';
-
-            if (matches.length === 0) {
-                listContainer.innerHTML = `
+      if (matches.length === 0) {
+        listContainer.innerHTML = `
           <div style="text-align:center; padding: 40px 20px; color:#94a3b8;">
             <i class="fa-solid fa-gamepad" style="font-size:42px; margin-bottom:12px; display:block;"></i>
             ${isMine ? `You have not joined any ${status} matches yet.` : `No ${status} matches right now! Check back soon.`}
           </div>`;
-                return;
-            }
+        return;
+      }
 
-            matches.forEach(match => {
-                match.id = match.id || match.key;
-                match.joined = Number(match.joined) || 0;
-                match.totalSpots = Number(match.totalSpots) || 0;
-                const spotsLeft = Math.max(0, match.totalSpots - match.joined);
-                const fillPercent = match.totalSpots > 0 ? Math.min(100, Math.round((match.joined / match.totalSpots) * 100)) : 0;
-                const limit = Number(match.maxJoinPerUser) || 1,
-                    myCount = match.myCount || 0;
-                const canJoin = status === 'upcoming' && myCount < limit && spotsLeft > 0;
-                const canView = myCount > 0 && status !== 'resulted';
-                const btnLabel = status === 'resulted' ? 'Results' : canView ? 'View' : status === 'ongoing' ? 'Live' : spotsLeft <= 0 ? 'Full' : 'Join';
+      matches.forEach(match => {
+        match.id = match.id || match.key;
+        match.joined = Number(match.joined) || 0;
+        match.totalSpots = Number(match.totalSpots) || 0;
+        const spotsLeft = Math.max(0, match.totalSpots - match.joined);
+        const fillPercent = match.totalSpots > 0 ? Math.min(100, Math.round((match.joined / match.totalSpots) * 100)) : 0;
+        const limit = Number(match.maxJoinPerUser) || 1, myCount = match.myCount || 0;
+        const canJoin = status === 'upcoming' && myCount < limit && spotsLeft > 0;
+        const canView = myCount > 0 && status !== 'resulted';
+        const btnLabel = status === 'resulted' ? 'Results' : canView ? 'View' : status === 'ongoing' ? 'Live' : spotsLeft <= 0 ? 'Full' : 'Join';
 
-                const card = document.createElement('div');
-                card.className = 'tournament-card';
-                card.innerHTML = `
+        const card = document.createElement('div');
+        card.className = 'tournament-card';
+        card.innerHTML = `
           <div class="tournament-banner-box"></div>
 
           <div class="tournament-content">
@@ -2886,795 +2791,635 @@
             </div>
           </div>
         `;
-                card.querySelector('.tournament-banner-box').style.backgroundImage = bgImage(match.bannerUrl, 0.2, 0.5);
-                const rl = card.querySelector('.rules-link');
-                if (rl) rl.onclick = () => openMatchRules(match);
-                const jb = card.querySelector('.btn-main');
-                if (status === 'resulted') jb.onclick = () => openMatchResults(match);
-                else if (canView) jb.onclick = () => openMatchView(match);
-                else if (canJoin) jb.onclick = () => openJoinModal(match);
-                const again = card.querySelector('.btn-again');
-                if (again) again.onclick = () => openJoinModal(match);
-                listContainer.appendChild(card);
-            });
-        }
+        card.querySelector('.tournament-banner-box').style.backgroundImage = bgImage(match.bannerUrl, 0.2, 0.5);
+        const rl = card.querySelector('.rules-link');
+        if (rl) rl.onclick = () => openMatchRules(match);
+        const jb = card.querySelector('.btn-main');
+        if (status === 'resulted') jb.onclick = () => openMatchResults(match);
+        else if (canView) jb.onclick = () => openMatchView(match);
+        else if (canJoin) jb.onclick = () => openJoinModal(match);
+        const again = card.querySelector('.btn-again');
+        if (again) again.onclick = () => openJoinModal(match);
+        listContainer.appendChild(card);
+      });
+    }
 
-        // Game rules page for a match (text cards + optional image uploaded by admin)
-        function openMatchRules(match) {
-            const txt = String(match.rules || '').trim();
-            openInfo('Game Rules', ipHero('fa-book', match.title || 'Game Rules', '#' + match.id) +
-                rulesImgTag(match) +
-                (txt ? txt.split(/\n\s*\n/).map(b => `<div class="ip-card">${esc(b.trim())}</div>`).join('') : ''));
-        }
+    // Game rules page for a match (text cards + optional image uploaded by admin)
+    function openMatchRules(match) {
+      const txt = String(match.rules || '').trim();
+      openInfo('Game Rules', ipHero('fa-book', match.title || 'Game Rules', '#' + match.id)
+        + rulesImgTag(match)
+        + (txt ? txt.split(/\n\s*\n/).map(b => `<div class="ip-card">${esc(b.trim())}</div>`).join('') : ''));
+    }
 
-        function copyText(t) {
-            navigator.clipboard.writeText(t).then(() => showToast('Copied: ' + t)).catch(() => showToast(t));
-        }
-
-        function rulesHtml(match) {
-            const txt = String(match.rules || '').trim();
-            return rulesImgTag(match) +
-                (txt ? txt.split(/\n\s*\n/).map(b => `<div class="ip-card">${esc(b.trim())}</div>`).join('') : '');
-        }
-        // "View" for a joined match: room id + password, joined players, rules
-        function openMatchView(match) {
-            const me = auth.currentUser ? auth.currentUser.uid : null;
-            const sec = t => `<div style="font-weight:800;font-size:16px;margin:20px 0 10px">${t}</div>`;
-            const copyRow = (icon, label, v) => `<div class="ip-row" data-c="${escAttr(v)}" onclick="copyText(this.dataset.c)"><i class="fa-solid ${icon}"></i><div><small>${label}</small><b>${esc(v || '-')}</b></div><i class="fa-regular fa-copy" style="margin-left:auto;background:none;width:auto"></i></div>`;
-            Promise.all([
-                db.ref(`match_participants/${match.id}`).once('value'),
-                db.ref(`match_rooms/${match.id}`).once('value').then(s => s.val() || {}, () => ({}))
-            ]).then(([ps, room]) => {
-                const names = [];
-                Object.entries(ps.val() || {}).forEach(([uid, p]) => {
-                    (p.slots ? Object.values(p.slots) : [{
-                        ign: p.ign
-                    }]).forEach(s => names.push({
-                        ign: s.ign,
-                        mine: uid === me
-                    }));
-                });
-                const roomHtml = (room.roomId || room.roomPass) ?
-                    copyRow('fa-door-open', 'Room ID (tap to copy)', room.roomId || '') + copyRow('fa-key', 'Password (tap to copy)', room.roomPass || '') :
-                    '<div class="ip-card" style="text-align:center;color:#94a3b8">Room ID &amp; password will be shown here before the match starts.</div>';
-                const players = names.map((n, i) => `<div class="wl-row"><div>${i + 1}. ${esc(n.ign)}</div>${n.mine ? '<b class="pos">You</b>' : ''}</div>`).join('');
-                const rules = rulesHtml(match);
-                openInfo('Match Details', ipHero('fa-gamepad', match.title || 'Match', '#' + match.id) +
-                    sec('Room Details') + roomHtml +
-                    sec(`Players Joined (${names.length})`) + `<div class="ip-card" style="padding:4px 14px">${players || '<div class="wl-empty">No players yet</div>'}</div>` +
-                    (rules ? sec('Rules') + rules : ''));
-            }).catch(e => showToast(e.message));
-        }
-
-        // Resulted match: which player got how many kills and how much reward
-        function openMatchResults(match) {
-            const me = auth.currentUser ? auth.currentUser.uid : null;
-            db.ref(`match_results/${match.id}`).once('value').then(snap => {
-                const rows = Object.entries(snap.val() || {}).map(([k, r]) => ({
-                        uid: k,
-                        ...r
-                    }))
-                    .sort((a, b) => (b.reward || 0) - (a.reward || 0) || (b.kills || 0) - (a.kills || 0));
-                if (!rows.length) return openInfo(`#${match.id} Results`, 'Results are not announced yet.');
-                const grid = 'display:grid;grid-template-columns:30px 1fr 48px 78px;gap:6px;align-items:center;';
-                const head = `<div style="${grid}font-size:12px;font-weight:700;color:#94a3b8;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.12)"><div>#</div><div>Player</div><div style="text-align:center">Kills</div><div style="text-align:right">Reward</div></div>`;
-                const body = rows.map((r, i) => {
-                    const extra = Number(r.extra) > 0 ? `<div style="font-size:10px;color:#fbbf24;font-weight:500">incl. ₹${esc(r.extra)} extra</div>` : '';
-                    return `<div style="${grid}padding:10px 6px;border-bottom:1px solid rgba(255,255,255,.06);${r.uid === me ? 'background:rgba(99,0,234,.25);border-radius:8px;' : ''}">` +
-                        `<div>${i + 1}</div><div style="font-weight:600;overflow:hidden;text-overflow:ellipsis">${esc(r.ign || r.name)}</div>` +
-                        `<div style="text-align:center">${esc(r.kills || 0)}</div><div style="text-align:right;font-weight:700">₹${esc(r.reward || 0)}${extra}</div></div>`;
-                }).join('');
-                const info = `<div style="font-size:12px;color:#94a3b8;margin-bottom:8px">Per kill: ₹${esc(match.perKill)} • Prize pool: ₹${esc(match.prizePool)}</div>`;
-                openInfo(`#${match.id} Results`, info + head + body);
-            }).catch(e => showToast(e.message));
-        }
-
-        // Join Match Modal Logic
-        function openJoinModal(match) {
-            selectedMatchForJoin = match;
-            const lim = Number(match.maxJoinPerUser) || 1;
-            document.getElementById('modalMatchTitle').textContent = `Join #${match.id}` + (lim > 1 ? ` (${match.myCount || 0}/${lim})` : '');
-            document.getElementById('modalFeeText').textContent = String(match.entryFee);
-            document.getElementById('joinModal').classList.add('active');
-        }
-
-        function closeJoinModal() {
-            document.getElementById('joinModal').classList.remove('active');
-            selectedMatchForJoin = null;
-        }
-
-        // Logged-in user whose profile has not loaded (slow network) or was never created
-        // (registration interrupted): load it, or create a basic one, instead of blocking them.
-        function getProfile() {
-            const user = auth.currentUser;
-            if (!user) return Promise.reject(new Error('Please log in first!'));
-            if (currentUserData) return Promise.resolve(currentUserData);
-            return db.ref('users/' + user.uid).once('value').then(snap => {
-                if (snap.exists()) {
-                    currentUserData = snap.val();
-                    return currentUserData;
-                }
-                const base = {
-                    username: (user.displayName || (user.email || 'player').split('@')[0]).toLowerCase().replace(/\s+/g, ''),
-                    email: user.email || '',
-                    walletBalance: 0,
-                    matchesPlayed: 0,
-                    totalKills: 0,
-                    totalEarnings: 0,
-                    createdAt: Date.now()
-                };
-                return db.ref('users/' + user.uid).set(base).then(() => (currentUserData = base));
-            });
-        }
-
-        let joinBusy = false;
-
-        function confirmJoinMatch() {
-            if (joinBusy) return; // stops double-tap = double charge
-            const ign = document.getElementById('modalPlayerIgn').value.trim();
-            const gid = document.getElementById('modalPlayerUid').value.trim();
-            if (!ign || !gid) return showToast("Please enter both Free Fire IGN and UID!");
-            if (!/^\d{5,15}$/.test(gid)) return showToast("Free Fire UID must be numeric!");
-            if (!auth.currentUser) return showToast("Please log in first!");
-            const m = selectedMatchForJoin;
-            if (!m) return;
-            const uid = auth.currentUser.uid,
-                fee = Number(m.entryFee) || 0,
-                total = Number(m.totalSpots) || 0;
-            const limit = Number(m.maxJoinPerUser) || 1; // max joins per user, set by admin
-            const pRef = db.ref(`match_participants/${m.id}/${uid}`);
-            const walletRef = db.ref(`users/${uid}/walletBalance`);
-            const joinedRef = db.ref(`tournaments/upcoming/${m.key || m.id}/joined`);
-            const btn = document.querySelector('.btn-modal-confirm');
-            const unlock = () => {
-                joinBusy = false;
-                btn.disabled = false;
-            };
-            const finish = msg => {
-                unlock();
-                closeJoinModal();
-                showToast(msg);
-            };
-            let charged = false,
-                slotTaken = false,
-                prev = null,
-                prevCount = 0;
-
-            joinBusy = true;
-            btn.disabled = true;
-            getProfile().then(() => pRef.once('value')).then(ps => {
-                prev = ps.exists() ? (ps.val() || {}) : null;
-                prevCount = prev ? (Number(prev.count) || 1) : 0;
-                if (prevCount >= limit) return finish(limit === 1 ? "You already joined this match!" : `Join limit reached (${limit} per player).`);
-                return walletRef.transaction(bal => (bal || 0) >= fee ? (bal || 0) - fee : undefined).then(r => {
-                    if (!r.committed) return finish(`Insufficient balance! Need ₹${fee}.`);
-                    charged = true;
-                    return joinedRef.transaction(j => (j || 0) < total ? (j || 0) + 1 : undefined).then(jr => {
-                        if (!jr.committed) {
-                            charged = false;
-                            walletRef.transaction(b => (b || 0) + fee);
-                            return finish("Match is full. Fee refunded.");
-                        }
-                        slotTaken = true;
-                        const slot = {
-                                ign,
-                                gameUid: gid,
-                                time: Date.now()
-                            },
-                            sk = db.ref().push().key;
-                        let write;
-                        if (!prev) {
-                            write = pRef.set({
-                                ign,
-                                gameUid: gid,
-                                name: currentUserData.username || '',
-                                timestamp: Date.now(),
-                                count: 1,
-                                slots: {
-                                    [sk]: slot
-                                }
-                            });
-                        } else {
-                            const up = {
-                                count: prevCount + 1,
-                                ['slots/' + sk]: slot
-                            };
-                            if (!prev.slots) up['slots/' + db.ref().push().key] = {
-                                ign: prev.ign || '',
-                                gameUid: prev.gameUid || ''
-                            }; // older single-join record
-                            write = pRef.update(up);
-                        }
-                        // Wait for the participant record; if it fails we roll back below
-                        return write.then(() => {
-                            db.ref(`users/${uid}/matchesPlayed`).transaction(n => (n || 0) + 1);
-                            if (fee > 0) {
-                                db.ref(`users/${uid}/winBalance`).transaction(w => Math.min(w || 0, r.snapshot.val() || 0));
-                                db.ref(`wallet_history/${uid}`).push({
-                                    type: 'join',
-                                    amount: -fee,
-                                    note: `Joined match #${m.id}`,
-                                    time: Date.now()
-                                });
-                            }
-                            rewardReferrer(fee);
-                            finish(`Success! Joined #${m.id}`);
-                            if (document.getElementById('contestsScreen').classList.contains('active')) loadContestMatches(); // Join -> View
-                        });
-                    });
-                });
-            }).catch(e => {
-                if (slotTaken) joinedRef.transaction(j => Math.max(0, (j || 0) - 1));
-                if (charged) walletRef.transaction(b => (b || 0) + fee);
-                unlock();
-                showToast((charged ? "Could not join, fee refunded. " : "") + e.message);
-            });
-        }
-
-        // Referrer reward on friend's first paid match
-        function rewardReferrer(fee) {
-            const u = currentUserData,
-                uid = auth.currentUser.uid;
-            if (!u.referredByUid || u.referralPaid || fee <= 0 || fee < (referCfg.minFee || 0)) return;
-            const reward = Number(referCfg.reward) || 0;
-            db.ref(`users/${uid}/referralPaid`).set(true);
-            if (reward > 0) {
-                const rid = u.referredByUid;
-                db.ref(`users/${rid}/walletBalance`).transaction(b => (b || 0) + reward).then(res => {
-                    if (res.committed) {
-                        db.ref(`wallet_history/${rid}`).push({
-                            type: 'referral',
-                            amount: reward,
-                            note: `Referral reward: ${u.username || 'your friend'} joined their first paid match`,
-                            time: Date.now()
-                        }).catch(() => {});
-                    }
-                }).catch(() => {});
-            }
-        }
-
-        // ==========================================
-        // WALLET / RECHARGE / REDEEM
-        // total = walletBalance, win (withdrawable) = winBalance, deposit = total - win
-        // ==========================================
-        let payCfg = {},
-            walletReturn = 'homeScreen',
-            redeemBusy = false;
-        db.ref('app_config/payment').on('value', snap => {
-            payCfg = snap.val() || {};
-            renderRedeem();
-            vipResume();
+    function copyText(t) { navigator.clipboard.writeText(t).then(() => showToast('Copied: ' + t)).catch(() => showToast(t)); }
+    function rulesHtml(match) {
+      const txt = String(match.rules || '').trim();
+      return rulesImgTag(match)
+        + (txt ? txt.split(/\n\s*\n/).map(b => `<div class="ip-card">${esc(b.trim())}</div>`).join('') : '');
+    }
+    // "View" for a joined match: room id + password, joined players, rules
+    function openMatchView(match) {
+      const me = auth.currentUser ? auth.currentUser.uid : null;
+      const sec = t => `<div style="font-weight:800;font-size:16px;margin:20px 0 10px">${t}</div>`;
+      const copyRow = (icon, label, v) => `<div class="ip-row" data-c="${escAttr(v)}" onclick="copyText(this.dataset.c)"><i class="fa-solid ${icon}"></i><div><small>${label}</small><b>${esc(v || '-')}</b></div><i class="fa-regular fa-copy" style="margin-left:auto;background:none;width:auto"></i></div>`;
+      Promise.all([
+        db.ref(`match_participants/${match.id}`).once('value'),
+        db.ref(`match_rooms/${match.id}`).once('value').then(s => s.val() || {}, () => ({}))
+      ]).then(([ps, room]) => {
+        const names = [];
+        Object.entries(ps.val() || {}).forEach(([uid, p]) => {
+          (p.slots ? Object.values(p.slots) : [{ ign: p.ign }]).forEach(s => names.push({ ign: s.ign, mine: uid === me }));
         });
-        const rupee = n => '₹ ' + (Number(n) || 0);
-        const $id = id => document.getElementById(id);
+        const roomHtml = (room.roomId || room.roomPass)
+          ? copyRow('fa-door-open', 'Room ID (tap to copy)', room.roomId || '') + copyRow('fa-key', 'Password (tap to copy)', room.roomPass || '')
+          : '<div class="ip-card" style="text-align:center;color:#94a3b8">Room ID &amp; password will be shown here before the match starts.</div>';
+        const players = names.map((n, i) => `<div class="wl-row"><div>${i + 1}. ${esc(n.ign)}</div>${n.mine ? '<b class="pos">You</b>' : ''}</div>`).join('');
+        const rules = rulesHtml(match);
+        openInfo('Match Details', ipHero('fa-gamepad', match.title || 'Match', '#' + match.id)
+          + sec('Room Details') + roomHtml
+          + sec(`Players Joined (${names.length})`) + `<div class="ip-card" style="padding:4px 14px">${players || '<div class="wl-empty">No players yet</div>'}</div>`
+          + (rules ? sec('Rules') + rules : ''));
+      }).catch(e => showToast(e.message));
+    }
 
-        function balances() {
-            const u = currentUserData || {},
-                total = Number(u.walletBalance) || 0,
-                win = Math.min(Number(u.winBalance) || 0, total);
-            return {
-                total,
-                win,
-                dep: total - win
-            };
-        }
+    // Resulted match: which player got how many kills and how much reward
+    function openMatchResults(match) {
+      const me = auth.currentUser ? auth.currentUser.uid : null;
+      db.ref(`match_results/${match.id}`).once('value').then(snap => {
+        const rows = Object.entries(snap.val() || {}).map(([k, r]) => ({ uid: k, ...r }))
+          .sort((a, b) => (b.reward || 0) - (a.reward || 0) || (b.kills || 0) - (a.kills || 0));
+        if (!rows.length) return openInfo(`#${match.id} Results`, 'Results are not announced yet.');
+        const grid = 'display:grid;grid-template-columns:30px 1fr 48px 78px;gap:6px;align-items:center;';
+        const head = `<div style="${grid}font-size:12px;font-weight:700;color:#94a3b8;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.12)"><div>#</div><div>Player</div><div style="text-align:center">Kills</div><div style="text-align:right">Reward</div></div>`;
+        const body = rows.map((r, i) => {
+          const extra = Number(r.extra) > 0 ? `<div style="font-size:10px;color:#fbbf24;font-weight:500">incl. ₹${esc(r.extra)} extra</div>` : '';
+          return `<div style="${grid}padding:10px 6px;border-bottom:1px solid rgba(255,255,255,.06);${r.uid === me ? 'background:rgba(99,0,234,.25);border-radius:8px;' : ''}">`
+            + `<div>${i + 1}</div><div style="font-weight:600;overflow:hidden;text-overflow:ellipsis">${esc(r.ign || r.name)}</div>`
+            + `<div style="text-align:center">${esc(r.kills || 0)}</div><div style="text-align:right;font-weight:700">₹${esc(r.reward || 0)}${extra}</div></div>`;
+        }).join('');
+        const info = `<div style="font-size:12px;color:#94a3b8;margin-bottom:8px">Per kill: ₹${esc(match.perKill)} • Prize pool: ₹${esc(match.prizePool)}</div>`;
+        openInfo(`#${match.id} Results`, info + head + body);
+      }).catch(e => showToast(e.message));
+    }
 
-        function refreshWalletUI() {
-            const b = balances();
-            $id('wlTotal').textContent = b.total;
-            $id('wlDep').textContent = b.dep;
-            $id('wlWin').textContent = b.win;
-            $id('rcTotal').textContent = rupee(b.total);
-            $id('rdWin').textContent = rupee(b.win);
-        }
+    // Join Match Modal Logic
+    function openJoinModal(match) {
+      selectedMatchForJoin = match;
+      const lim = Number(match.maxJoinPerUser) || 1;
+      document.getElementById('modalMatchTitle').textContent = `Join #${match.id}` + (lim > 1 ? ` (${match.myCount || 0}/${lim})` : '');
+      document.getElementById('modalFeeText').textContent = String(match.entryFee);
+      document.getElementById('joinModal').classList.add('active');
+    }
 
-        function listRows(path, boxId, rowFn, empty) {
-            const box = $id(boxId),
-                uid = auth.currentUser.uid;
-            box.innerHTML = '';
-            db.ref(path + '/' + uid).limitToLast(30).once('value').then(s => {
-                const rows = Object.values(s.val() || {}).sort((a, b) => (b.time || b.createdAt) - (a.time || a.createdAt));
-                box.innerHTML = rows.length ? rows.map(rowFn).join('') : `<div class="wl-empty">${empty}</div>`;
-            }).catch(() => {
-                box.innerHTML = '<div class="wl-empty">Could not load</div>';
-            });
-        }
-        const dt = t => new Date(t).toLocaleString();
+    function closeJoinModal() {
+      document.getElementById('joinModal').classList.remove('active');
+      selectedMatchForJoin = null;
+    }
 
-        function openWallet() {
-            const cur = document.querySelector('.view-screen.active');
-            if (cur && !['walletScreen', 'rechargeScreen', 'redeemScreen'].includes(cur.id)) walletReturn = cur.id;
-            showScreen('walletScreen');
-            refreshWalletUI();
-            listRows('wallet_history', 'wlHistory', r => `<div class="wl-row"><div><div>${esc(r.note)}</div><small>${dt(r.time)}</small></div>${r.amount ? `<b class="${r.amount < 0 ? 'neg' : 'pos'}">${r.amount < 0 ? '-' : '+'}₹${Math.abs(r.amount)}</b>` : ''}</div>`, 'No transactions found');
-        }
+    // Logged-in user whose profile has not loaded (slow network) or was never created
+    // (registration interrupted): load it, or create a basic one, instead of blocking them.
+    function getProfile() {
+      const user = auth.currentUser;
+      if (!user) return Promise.reject(new Error('Please log in first!'));
+      if (currentUserData) return Promise.resolve(currentUserData);
+      return db.ref('users/' + user.uid).once('value').then(snap => {
+        if (snap.exists()) { currentUserData = snap.val(); return currentUserData; }
+        const base = {
+          username: (user.displayName || (user.email || 'player').split('@')[0]).toLowerCase().replace(/\s+/g, ''),
+          email: user.email || '',
+          walletBalance: 0, matchesPlayed: 0, totalKills: 0, totalEarnings: 0, createdAt: Date.now()
+        };
+        return db.ref('users/' + user.uid).set(base).then(() => (currentUserData = base));
+      });
+    }
 
-        function openWalletModal(title, body, btnText, onConfirm) {
-            $id('wmTitle').textContent = title;
-            $id('wmBody').innerHTML = body;
-            $id('wmBtn').textContent = btnText;
-            $id('wmBtn').onclick = onConfirm;
-            $id('walletModal').classList.add('active');
-        }
+    let joinBusy = false;
+    function confirmJoinMatch() {
+      if (joinBusy) return; // stops double-tap = double charge
+      const ign = document.getElementById('modalPlayerIgn').value.trim();
+      const gid = document.getElementById('modalPlayerUid').value.trim();
+      if (!ign || !gid) return showToast("Please enter both Free Fire IGN and UID!");
+      if (!/^\d{5,15}$/.test(gid)) return showToast("Free Fire UID must be numeric!");
+      if (!auth.currentUser) return showToast("Please log in first!");
+      const m = selectedMatchForJoin;
+      if (!m) return;
+      const uid = auth.currentUser.uid, fee = Number(m.entryFee) || 0, total = Number(m.totalSpots) || 0;
+      const limit = Number(m.maxJoinPerUser) || 1; // max joins per user, set by admin
+      const pRef = db.ref(`match_participants/${m.id}/${uid}`);
+      const walletRef = db.ref(`users/${uid}/walletBalance`);
+      const joinedRef = db.ref(`tournaments/upcoming/${m.key || m.id}/joined`);
+      const btn = document.querySelector('.btn-modal-confirm');
+      const unlock = () => { joinBusy = false; btn.disabled = false; };
+      const finish = msg => { unlock(); closeJoinModal(); showToast(msg); };
+      let charged = false, slotTaken = false, prev = null, prevCount = 0;
 
-        function closeWalletModal() {
-            $id('walletModal').classList.remove('active');
-        }
-
-        // ----- Recharge via VIP Gateways -----
-        // IMPORTANT: replace the placeholder with a newly generated gateway token.
-        // For production, move create-order and check-order-status calls to a trusted server.
-        const VIPGATEWAYS_DOMAIN = 'https://vipgateways.xyz';
-        const VIPGATEWAYS_USER_TOKEN = 'VIPcc67fcd6c99cec9968ca700e6eabf961';
-        let vipBusy = false,
-            vipPending = null;
-        (function readVipReturn() {
-            try {
-                const q = new URLSearchParams(location.search),
-                    id = q.get('vip_order_id');
-                if (id && /^ORD_[A-Za-z0-9_-]{6,70}$/.test(id)) vipPending = id;
-                if (id) history.replaceState(null, '', location.href.split(/[?#]/)[0]);
-            } catch (e) {}
-        })();
-
-        function renderRechargeHistory() {
-            listRows('deposits', 'rcHistory', r => `<div class="wl-row"><div><div>₹${esc(r.amount)}</div><small>${dt(r.createdAt)} • ${esc(r.method || 'manual')} ${r.orderId ? '• ' + esc(r.orderId) : ''}</small></div><b class="${r.status === 'approved' ? 'pos' : (r.status === 'rejected' || r.status === 'failed') ? 'neg' : 'pend'}">${esc(r.status)}</b></div>`, 'Sorry, no data found');
-        }
-
-        function openRecharge() {
-            showScreen('rechargeScreen');
-            refreshWalletUI();
-            renderRechargeHistory();
-            vipSync();
-        }
-
-        function setRechargeAmt(n) {
-            $id('rcAmount').value = n;
-        }
-
-        function startRecharge() {
-            const amt = Math.floor(Number($id('rcAmount').value));
-            if (!(amt >= 11 && amt <= 1000)) return showToast('Enter amount between ₹11 and ₹1000');
-            vipRecharge(amt);
-        }
-
-        function vipGatewayCall(path, params) {
-            if (!VIPGATEWAYS_USER_TOKEN || VIPGATEWAYS_USER_TOKEN.indexOf('YOUR_') === 0)
-                return Promise.reject(new Error('VIP Gateways token is not configured in gamerx.html'));
-            return fetch(VIPGATEWAYS_DOMAIN + '/api/' + path, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: new URLSearchParams(Object.assign({
-                    user_token: VIPGATEWAYS_USER_TOKEN
-                }, params)).toString()
-            }).then(res => res.json().catch(() => ({})).then(data => {
-                if (!res.ok || !data || data.status !== true) throw new Error((data && data.message) || 'VIP Gateways request failed (' + res.status + ')');
-                return data.result || {};
-            }));
-        }
-
-        function vipSettle(orderId) {
-            const uid = auth.currentUser.uid,
-                ref = db.ref(`deposits/${uid}/${orderId}`);
-            return ref.once('value').then(snap => {
-                const rec = snap.val();
-                if (!rec || rec.method !== 'vipgateways') return null;
-                if (rec.status === 'approved') return {
-                    state: 'success',
-                    amount: Number(rec.amount),
-                    already: true
-                };
-                if (rec.status !== 'processing') return {
-                    state: rec.status === 'pending' ? 'review' : 'failed'
-                };
-                return vipGatewayCall('check-order-status', {
-                    order_id: orderId
-                }).then(result => {
-                    const st = String(result.status || '').toUpperCase();
-                    const paid = Number(result.amount || 0);
-                    if (st === 'SUCCESS') {
-                        if (paid > 0 && paid !== Number(rec.amount)) {
-                            return ref.child('status').transaction(x => x === 'processing' ? 'pending' : undefined)
-                                .then(() => ({
-                                    state: 'review'
-                                }));
-                        }
-                        return ref.child('status').transaction(x => x === 'processing' ? 'approved' : undefined).then(t => {
-                            if (!t.committed) return null;
-                            const amt = Number(rec.amount),
-                                now = Date.now();
-                            return db.ref(`users/${uid}/walletBalance`).transaction(b => (Number(b) || 0) + amt).then(() =>
-                                Promise.all([
-                                    db.ref(`wallet_history/${uid}`).push({
-                                        type: 'deposit',
-                                        amount: amt,
-                                        note: 'Recharge via VIP Gateways',
-                                        time: now
-                                    }),
-                                    ref.update({
-                                        utr: result.utr || '',
-                                        doneAt: now,
-                                        credited: true
-                                    })
-                                ]).then(() => ({
-                                    state: 'success',
-                                    amount: amt,
-                                    utr: result.utr || ''
-                                }))
-                            );
-                        });
-                    }
-                    if (['FAILED', 'FAILURE', 'EXPIRED', 'CANCELLED', 'CANCELED', 'TIMEOUT'].includes(st)) {
-                        return ref.child('status').transaction(x => x === 'processing' ? 'failed' : undefined).then(() => ({
-                            state: 'failed'
-                        }));
-                    }
-                    return {
-                        state: 'pending'
-                    };
-                });
-            });
-        }
-
-        function vipShowResult(r) {
-            if (!r) return;
-            if (r.state === 'success') {
-                refreshWalletUI();
-                openInfo('Payment', ipHero('fa-circle-check', 'Payment Successful', '₹' + r.amount + ' added to your wallet') +
-                    (r.utr ? ipRow('fa-hashtag', 'UTR', r.utr) : '') +
-                    '<button class="btn-auth" style="margin-top:14px" onclick="openWallet()">Go to Wallet</button>');
+      joinBusy = true; btn.disabled = true;
+      getProfile().then(() => pRef.once('value')).then(ps => {
+        prev = ps.exists() ? (ps.val() || {}) : null;
+        prevCount = prev ? (Number(prev.count) || 1) : 0;
+        if (prevCount >= limit) return finish(limit === 1 ? "You already joined this match!" : `Join limit reached (${limit} per player).`);
+        return walletRef.transaction(bal => (bal || 0) >= fee ? (bal || 0) - fee : undefined).then(r => {
+          if (!r.committed) return finish(`Insufficient balance! Need ₹${fee}.`);
+          charged = true;
+          return joinedRef.transaction(j => (j || 0) < total ? (j || 0) + 1 : undefined).then(jr => {
+            if (!jr.committed) {
+              charged = false;
+              walletRef.transaction(b => (b || 0) + fee);
+              return finish("Match is full. Fee refunded.");
+            }
+            slotTaken = true;
+            const slot = { ign, gameUid: gid, time: Date.now() }, sk = db.ref().push().key;
+            let write;
+            if (!prev) {
+              write = pRef.set({ ign, gameUid: gid, name: currentUserData.username || '', timestamp: Date.now(), count: 1, slots: { [sk]: slot } });
             } else {
-                showToast(r.state === 'pending' ? 'Payment is being confirmed. Please check again shortly.' :
-                    r.state === 'review' ? 'Payment received. Amount is under admin review.' :
-                    'Payment failed or was cancelled.');
-                openRecharge();
+              const up = { count: prevCount + 1, ['slots/' + sk]: slot };
+              if (!prev.slots) up['slots/' + db.ref().push().key] = { ign: prev.ign || '', gameUid: prev.gameUid || '' }; // older single-join record
+              write = pRef.update(up);
             }
-        }
-
-        function vipResume() {
-            if (!vipPending || !auth.currentUser) return;
-            const id = vipPending;
-            vipPending = null;
-            showToast('Verifying payment...');
-            vipSettle(id).then(r => {
-                vipShowResult(r);
-                if (r && r.state === 'pending') setTimeout(() => vipSettle(id).then(vipShowResult).catch(() => {}), 5000);
-            }).catch(e => showToast('Verification failed: ' + (e && e.message || e)));
-        }
-
-        function vipSync() {
-            if (!auth.currentUser || VIPGATEWAYS_USER_TOKEN.indexOf('YOUR_') === 0) return;
-            db.ref('deposits/' + auth.currentUser.uid).limitToLast(20).once('value').then(snap => {
-                const jobs = [];
-                snap.forEach(c => {
-                    const r = c.val();
-                    if (r && r.method === 'vipgateways' && r.status === 'processing') jobs.push(vipSettle(c.key).catch(() => null));
-                });
-                return Promise.all(jobs).then(res => {
-                    if (res.some(Boolean)) {
-                        refreshWalletUI();
-                        renderRechargeHistory();
-                    }
-                });
-            }).catch(() => {});
-        }
-
-        function vipRecharge(amt) {
-            if (vipBusy) return;
-            vipBusy = true;
-            const btn = document.querySelector('.rc-go');
-            if (btn) {
-                btn.disabled = true;
-                btn.textContent = 'Please wait...';
-            }
-            const unlock = () => {
-                vipBusy = false;
-                if (btn) {
-                    btn.disabled = false;
-                    btn.textContent = 'Recharge';
-                }
-            };
-            const uid = auth.currentUser.uid,
-                u = currentUserData || {};
-            const orderId = 'ORD_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8).toUpperCase();
-            const ref = db.ref(`deposits/${uid}/${orderId}`);
-            const mobile = String(u.mobile || u.phone || u.phoneNumber || (auth.currentUser && auth.currentUser.phoneNumber) || '').replace(/\D/g, '').slice(-10);
-            const redirect = location.href.split(/[?#]/)[0] + '?vip_order_id=' + encodeURIComponent(orderId);
-            ref.set({
-                    amount: amt,
-                    utr: 'VIP Gateways ' + orderId,
-                    method: 'vipgateways',
-                    orderId,
-                    status: 'processing',
-                    username: u.username || '',
-                    createdAt: Date.now()
-                })
-                .then(() => vipGatewayCall('create-order', {
-                    order_id: orderId,
-                    amount: amt.toFixed(2),
-                    customer_mobile: mobile,
-                    redirect_url: redirect,
-                    remark1: 'MAXN BATTLE Wallet Recharge',
-                    remark2: '',
-                    route: ''
-                }))
-                .then(result => {
-                    if (!/^https:\/\//i.test(result.payment_url || '')) throw new Error('Invalid payment URL received from VIP Gateways');
-                    $id('rcAmount').value = '';
-                    showToast('Redirecting to secure payment page...');
-                    location.href = result.payment_url;
-                })
-                .catch(e => {
-                    unlock();
-                    ref.child('status').set('failed').catch(() => {});
-                    showToast('Payment order error: ' + (e && e.message || e));
-                });
-        }
-
-        function openRedeem() {
-            showScreen('redeemScreen');
-            refreshWalletUI();
-            renderRedeem();
-        }
-
-        function renderRedeem() {
-            const box = $id('rdList');
-            if (!box) return;
-            const opts = String(payCfg.redeemOptions || '50,60,70,80,100,150,200').split(',').map(Number).filter(n => n > 0);
-            box.innerHTML = opts.map(n => `<div class="rd-card" onclick="startRedeem(${n})"><div class="rd-logo">UPI</div><div class="rd-mid">UPI Withdraw<small>Redeem Won Coins</small></div><div class="rd-amt">${n} INR</div></div>`).join('');
-        }
-
-        function startRedeem(n) {
-            if (balances().win < n) return showToast(`Not enough Win Balance. You need ₹${n}.`);
-            openWalletModal(`Redeem ₹${n}`, '<div class="wl-note">Enter your UPI ID to receive the money.</div><input class="modal-input" id="wmInput" placeholder="UPI ID (e.g. name@upi)">', 'Request Withdrawal', () => redeem(n));
-        }
-
-        function redeem(n) {
-            const upi = $id('wmInput').value.trim();
-            if (!/^[\w.\-]{2,}@[\w.\-]{2,}$/.test(upi)) return showToast('Enter a valid UPI ID (e.g. name@upi)');
-            if (redeemBusy) return;
-            redeemBusy = true;
-            const uid = auth.currentUser.uid,
-                winRef = db.ref(`users/${uid}/winBalance`),
-                walRef = db.ref(`users/${uid}/walletBalance`);
-            const done = msg => {
-                redeemBusy = false;
-                closeWalletModal();
-                showToast(msg);
-            };
-            winRef.transaction(w => (w || 0) >= n ? (w || 0) - n : undefined).then(r => {
-                if (!r.committed) return done('Not enough Win Balance.');
-                return walRef.transaction(b => (b || 0) >= n ? (b || 0) - n : undefined).then(r2 => {
-                    if (!r2.committed) {
-                        winRef.transaction(w => (w || 0) + n);
-                        return done('Not enough balance.');
-                    }
-                    const now = Date.now(),
-                        up = {};
-                    up[`withdrawals/${uid}/${db.ref().push().key}`] = {
-                        amount: n,
-                        upi,
-                        status: 'pending',
-                        username: (currentUserData || {}).username || '',
-                        createdAt: now
-                    };
-                    up[`wallet_history/${uid}/${db.ref().push().key}`] = {
-                        type: 'withdraw',
-                        amount: -n,
-                        note: 'Withdrawal requested (pending)',
-                        time: now
-                    };
-                    return db.ref().update(up).then(() => done('Withdrawal requested! Admin will pay to your UPI.'))
-                        .catch(e => {
-                            winRef.transaction(w => (w || 0) + n);
-                            walRef.transaction(b => (b || 0) + n);
-                            done(e.message);
-                        });
-                });
-            }).catch(e => {
-                redeemBusy = false;
-                showToast(e.message);
+            // Wait for the participant record; if it fails we roll back below
+            return write.then(() => {
+              db.ref(`users/${uid}/matchesPlayed`).transaction(n => (n || 0) + 1);
+              if (fee > 0) {
+                db.ref(`users/${uid}/winBalance`).transaction(w => Math.min(w || 0, r.snapshot.val() || 0));
+                db.ref(`wallet_history/${uid}`).push({ type: 'join', amount: -fee, note: `Joined match #${m.id}`, time: Date.now() });
+              }
+              rewardReferrer(fee);
+              finish(`Success! Joined #${m.id}`);
+              if (document.getElementById('contestsScreen').classList.contains('active')) loadContestMatches(); // Join -> View
             });
+          });
+        });
+      }).catch(e => {
+        if (slotTaken) joinedRef.transaction(j => Math.max(0, (j || 0) - 1));
+        if (charged) walletRef.transaction(b => (b || 0) + fee);
+        unlock();
+        showToast((charged ? "Could not join, fee refunded. " : "") + e.message);
+      });
+    }
+
+    // Referrer reward on friend's first paid match
+    function rewardReferrer(fee) {
+      const u = currentUserData, uid = auth.currentUser.uid;
+      if (!u.referredByUid || u.referralPaid || fee <= 0 || fee < (referCfg.minFee || 0)) return;
+      const reward = Number(referCfg.reward) || 0;
+      db.ref(`users/${uid}/referralPaid`).set(true);
+      if (reward > 0) {
+        const rid = u.referredByUid;
+        db.ref(`users/${rid}/walletBalance`).transaction(b => (b || 0) + reward).then(res => {
+          if (res.committed) {
+            db.ref(`wallet_history/${rid}`).push({ type: 'referral', amount: reward, note: `Referral reward: ${u.username || 'your friend'} joined their first paid match`, time: Date.now() }).catch(() => {});
+          }
+        }).catch(() => {});
+      }
+    }
+
+    // ==========================================
+    // WALLET / RECHARGE / REDEEM
+    // total = walletBalance, win (withdrawable) = winBalance, deposit = total - win
+    // ==========================================
+    let payCfg = {}, walletReturn = 'homeScreen', redeemBusy = false;
+    db.ref('app_config/payment').on('value', snap => { payCfg = snap.val() || {}; renderRedeem(); });
+    const rupee = n => '₹ ' + (Number(n) || 0);
+    const $id = id => document.getElementById(id);
+    function balances() {
+      const u = currentUserData || {}, total = Number(u.walletBalance) || 0, win = Math.min(Number(u.winBalance) || 0, total);
+      return { total, win, dep: total - win };
+    }
+    function refreshWalletUI() {
+      const b = balances();
+      $id('wlTotal').textContent = b.total; $id('wlDep').textContent = b.dep; $id('wlWin').textContent = b.win;
+      $id('rcTotal').textContent = rupee(b.total); $id('rdWin').textContent = rupee(b.win);
+    }
+    function listRows(path, boxId, rowFn, empty) {
+      const box = $id(boxId), uid = auth.currentUser.uid;
+      box.innerHTML = '';
+      db.ref(path + '/' + uid).limitToLast(30).once('value').then(s => {
+        const rows = Object.values(s.val() || {}).sort((a, b) => (b.time || b.createdAt) - (a.time || a.createdAt));
+        box.innerHTML = rows.length ? rows.map(rowFn).join('') : `<div class="wl-empty">${empty}</div>`;
+      }).catch(() => { box.innerHTML = '<div class="wl-empty">Could not load</div>'; });
+    }
+    const dt = t => new Date(t).toLocaleString();
+    function openWallet() {
+      const cur = document.querySelector('.view-screen.active');
+      if (cur && !['walletScreen', 'rechargeScreen', 'redeemScreen'].includes(cur.id)) walletReturn = cur.id;
+      showScreen('walletScreen'); refreshWalletUI();
+      listRows('wallet_history', 'wlHistory', r => `<div class="wl-row"><div><div>${esc(r.note)}</div><small>${dt(r.time)}</small></div>${r.amount ? `<b class="${r.amount < 0 ? 'neg' : 'pos'}">${r.amount < 0 ? '-' : '+'}₹${Math.abs(r.amount)}</b>` : ''}</div>`, 'No transactions found');
+    }
+    function openWalletModal(title, body, btnText, onConfirm) {
+      $id('wmTitle').textContent = title; $id('wmBody').innerHTML = body;
+      $id('wmBtn').textContent = btnText; $id('wmBtn').onclick = onConfirm;
+      $id('walletModal').classList.add('active');
+    }
+    function closeWalletModal() { $id('walletModal').classList.remove('active'); }
+
+    // ----- Recharge via VIP Gateways (New Integrated Gateway) -----
+    const VIPGATEWAYS_DOMAIN = "https://vipgateways.xyz";
+    const USER_TOKEN = "VIPe4123356b23698e75b08673dc5f498c8";
+
+    let vipBusy = false;
+    let vipPendingOrderId = null;
+
+    (function readPaymentReturnParams() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const orderId = params.get("order_id");
+        if (orderId && /^[A-Za-z0-9_-]{6,80}$/.test(orderId)) {
+          vipPendingOrderId = orderId;
+        }
+        if (orderId) {
+          window.history.replaceState(null, "", window.location.href.split(/[?#]/)[0]);
+        }
+      } catch (e) {}
+    })();
+
+    function renderRechargeHistory() {
+      listRows(
+        "deposits",
+        "rcHistory",
+        r => `<div class="wl-row"><div><div>₹${esc(r.amount)}</div><small>${dt(r.createdAt)} • ${esc(r.method || "vipgateways")} ${r.orderId ? "• " + esc(r.orderId) : ""}</small></div><b class="${r.status === "approved" ? "pos" : (r.status === "rejected" || r.status === "failed") ? "neg" : "pend"}">${esc(r.status)}</b></div>`,
+        "Sorry, no data found"
+      );
+    }
+
+    function openRecharge() {
+      showScreen("rechargeScreen");
+      refreshWalletUI();
+      renderRechargeHistory();
+      if (vipPendingOrderId && auth.currentUser) {
+        const id = vipPendingOrderId;
+        vipPendingOrderId = null;
+        checkPaymentStatus(id);
+      }
+    }
+
+    function setRechargeAmt(n) {
+      $id("rcAmount").value = n;
+    }
+
+    function startRecharge() {
+      const amt = Math.floor(Number($id("rcAmount").value));
+      if (!(amt >= 11 && amt <= 1000)) {
+        return showToast("Enter amount between ₹11 and ₹1000");
+      }
+      initiatePayment(amt);
+    }
+
+    async function initiatePayment(amountValue) {
+      if (vipBusy) return;
+      if (!auth.currentUser) return showToast("Please log in first!");
+      if (!USER_TOKEN || USER_TOKEN === "YOUR_USER_TOKEN_HERE") {
+        return showToast("Please set USER_TOKEN in code first");
+      }
+
+      vipBusy = true;
+      const btn = document.querySelector(".rc-go");
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Please wait...";
+      }
+      const unlock = () => {
+        vipBusy = false;
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = "Recharge";
+        }
+      };
+
+      const uid = auth.currentUser.uid;
+      const u = currentUserData || {};
+      const orderId = "ORD_" + Date.now();
+      const mobile = String(
+        u.mobile || u.phone || u.phoneNumber || (auth.currentUser && auth.currentUser.phoneNumber) || "9876543210"
+      ).replace(/\D/g, "").slice(-10) || "9876543210";
+
+      const baseUrl = window.location.href.split(/[?#]/)[0];
+      const redirectUrl = baseUrl + "?order_id=" + encodeURIComponent(orderId);
+      const depositRef = db.ref(`deposits/${uid}/${orderId}`);
+
+      try {
+        await depositRef.set({
+          amount: amountValue,
+          utr: "",
+          method: "vipgateways",
+          orderId: orderId,
+          status: "processing",
+          username: u.username || "",
+          createdAt: Date.now()
+        });
+
+        const formData = new URLSearchParams({
+          user_token: USER_TOKEN,
+          order_id: orderId,
+          amount: Number(amountValue).toFixed(2),
+          customer_mobile: mobile,
+          redirect_url: redirectUrl,
+          remark1: "Wallet Recharge",
+          remark2: "",
+          route: ""
+        });
+
+        const res = await fetch(VIPGATEWAYS_DOMAIN + "/api/create-order", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: formData.toString()
+        });
+
+        const data = await res.json();
+        if (data && data.status === true && data.result && data.result.payment_url) {
+          $id("rcAmount").value = "";
+          showToast("Redirecting to payment page...");
+          window.location.href = data.result.payment_url;
+        } else {
+          await depositRef.child("status").set("failed");
+          unlock();
+          showToast("Payment Error: " + ((data && data.message) || "Unable to create order"));
+        }
+      } catch (err) {
+        await depositRef.child("status").set("failed").catch(() => {});
+        unlock();
+        showToast("Payment Error: " + (err && err.message ? err.message : err));
+      }
+    }
+
+    async function creditWalletOnce(uid, orderId, amountValue, utr) {
+      const depRef = db.ref(`deposits/${uid}/${orderId}`);
+      const tx = await depRef.child("status").transaction(curr => {
+        if (curr === "processing" || curr === "pending") return "approved";
+        return undefined;
+      });
+      if (!tx.committed) return false;
+
+      const amt = Number(amountValue) || 0;
+      const now = Date.now();
+      await db.ref(`users/${uid}/walletBalance`).transaction(bal => (Number(bal) || 0) + amt);
+      await Promise.all([
+        db.ref(`wallet_history/${uid}`).push({
+          type: "deposit",
+          amount: amt,
+          note: "Recharge via VIP Gateways",
+          time: now
+        }),
+        depRef.update({
+          utr: utr || "",
+          doneAt: now,
+          credited: true
+        })
+      ]);
+      return true;
+    }
+
+    async function checkPaymentStatus(orderId, attempt = 0) {
+      if (!orderId || !auth.currentUser) return;
+      const uid = auth.currentUser.uid;
+      const depRef = db.ref(`deposits/${uid}/${orderId}`);
+
+      try {
+        const snap = await depRef.once("value");
+        const rec = snap.val();
+        if (!rec) return;
+
+        if (rec.status === "approved") {
+          refreshWalletUI();
+          renderRechargeHistory();
+          return;
         }
 
-        function genCode() {
-            return Math.random().toString(36).substring(2, 8).toUpperCase();
-        }
+        const res = await fetch(VIPGATEWAYS_DOMAIN + "/api/check-order-status", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({
+            user_token: USER_TOKEN,
+            order_id: orderId
+          }).toString()
+        });
 
-        function esc(t) {
-            const d = document.createElement('div');
-            d.textContent = t == null ? '' : t;
-            return d.innerHTML;
-        }
+        const data = await res.json();
+        const result = (data && data.result) || {};
+        const st = String(result.status || "").toUpperCase();
 
-        function escAttr(t) {
-            return esc(t).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        if (st === "SUCCESS") {
+          const paidAmt = Number(result.amount) > 0 ? Number(result.amount) : Number(rec.amount);
+          await creditWalletOnce(uid, orderId, paidAmt, result.utr || "");
+          refreshWalletUI();
+          renderRechargeHistory();
+          showToast("Payment Successful! ₹" + paidAmt + " added.");
+        } else if (st === "PENDING") {
+          if (attempt < 10) {
+            setTimeout(() => checkPaymentStatus(orderId, attempt + 1), 3000);
+          } else {
+            renderRechargeHistory();
+            showToast("Payment is still pending. Please check again.");
+          }
+        } else {
+          await depRef.child("status").set("failed").catch(() => {});
+          renderRechargeHistory();
+          showToast("Payment failed or cancelled.");
         }
-        // Safe CSS background (a missing image used to request "url('undefined')")
-        // Images saved by admin are Base64 text (data:image/...) or an old http(s) link. Anything else is ignored.
-        function safeImg(u) {
-            u = String(u == null ? '' : u).trim();
-            return /^(data:image\/(png|jpe?g|webp|gif);base64,[A-Za-z0-9+\/=]+|https?:\/\/\S+)$/i.test(u) ? u : '';
+      } catch (err) {
+        console.warn("Status check error:", err);
+      }
+    }
+
+    function openRedeem() { showScreen('redeemScreen'); refreshWalletUI(); renderRedeem(); }
+    function renderRedeem() {
+      const box = $id('rdList'); if (!box) return;
+      const opts = String(payCfg.redeemOptions || '50,60,70,80,100,150,200').split(',').map(Number).filter(n => n > 0);
+      box.innerHTML = opts.map(n => `<div class="rd-card" onclick="startRedeem(${n})"><div class="rd-logo">UPI</div><div class="rd-mid">UPI Withdraw<small>Redeem Won Coins</small></div><div class="rd-amt">${n} INR</div></div>`).join('');
+    }
+    function startRedeem(n) {
+      if (balances().win < n) return showToast(`Not enough Win Balance. You need ₹${n}.`);
+      openWalletModal(`Redeem ₹${n}`, '<div class="wl-note">Enter your UPI ID to receive the money.</div><input class="modal-input" id="wmInput" placeholder="UPI ID (e.g. name@upi)">', 'Request Withdrawal', () => redeem(n));
+    }
+    function redeem(n) {
+      const upi = $id('wmInput').value.trim();
+      if (!/^[\w.\-]{2,}@[\w.\-]{2,}$/.test(upi)) return showToast('Enter a valid UPI ID (e.g. name@upi)');
+      if (redeemBusy) return;
+      redeemBusy = true;
+      const uid = auth.currentUser.uid, winRef = db.ref(`users/${uid}/winBalance`), walRef = db.ref(`users/${uid}/walletBalance`);
+      const done = msg => { redeemBusy = false; closeWalletModal(); showToast(msg); };
+      winRef.transaction(w => (w || 0) >= n ? (w || 0) - n : undefined).then(r => {
+        if (!r.committed) return done('Not enough Win Balance.');
+        return walRef.transaction(b => (b || 0) >= n ? (b || 0) - n : undefined).then(r2 => {
+          if (!r2.committed) { winRef.transaction(w => (w || 0) + n); return done('Not enough balance.'); }
+          const now = Date.now(), up = {};
+          up[`withdrawals/${uid}/${db.ref().push().key}`] = { amount: n, upi, status: 'pending', username: (currentUserData || {}).username || '', createdAt: now };
+          up[`wallet_history/${uid}/${db.ref().push().key}`] = { type: 'withdraw', amount: -n, note: 'Withdrawal requested (pending)', time: now };
+          return db.ref().update(up).then(() => done('Withdrawal requested! Admin will pay to your UPI.'))
+            .catch(e => { winRef.transaction(w => (w || 0) + n); walRef.transaction(b => (b || 0) + n); done(e.message); });
+        });
+      }).catch(e => { redeemBusy = false; showToast(e.message); });
+    }
+
+    function genCode() { return Math.random().toString(36).substring(2, 8).toUpperCase(); }
+    function esc(t) { const d = document.createElement('div'); d.textContent = t == null ? '' : t; return d.innerHTML; }
+    function escAttr(t) { return esc(t).replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
+    // Safe CSS background (a missing image used to request "url('undefined')")
+    // Images saved by admin are Base64 text (data:image/...) or an old http(s) link. Anything else is ignored.
+    function safeImg(u) {
+      u = String(u == null ? '' : u).trim();
+      return /^(data:image\/(png|jpe?g|webp|gif);base64,[A-Za-z0-9+\/=]+|https?:\/\/\S+)$/i.test(u) ? u : '';
+    }
+    function rulesImgTag(m) {
+      const u = safeImg(m && m.rulesImg);
+      return u ? `<img src="${escAttr(u)}" alt="Rules" decoding="async" onerror="this.style.display='none'" style="width:100%;border-radius:14px;margin-bottom:12px">` : '';
+    }
+    function bgImage(u, a, b) {
+      const grad = `linear-gradient(rgba(0,0,0,${a}), rgba(0,0,0,${b}))`;
+      const safe = safeImg(u);
+      return safe ? `${grad}, url("${safe.replace(/["\\\n\r]/g, c => encodeURIComponent(c))}")` : grad;
+    }
+
+    function finishRegister(uid, userData, typedCode) {
+      const code = userData.referredByCode;
+      const lookup = code ? db.ref('referralCodes/' + code).once('value') : Promise.resolve(null);
+      let status = typedCode ? 'invalid' : 'none', bonus = 0;
+      return lookup.then(snap => {
+        if (snap && snap.exists() && snap.val() !== uid) {
+          userData.referredByUid = snap.val();
+          bonus = Number(referCfg.friendBonus) || 0;
+          userData.walletBalance = bonus;
+          status = 'ok';
         }
+        return db.ref('users/' + uid).set(userData);
+      }).then(() => db.ref('referralCodes/' + userData.referralCode).set(uid))
+        .then(() => {
+          if (status === 'ok' && bonus > 0) {
+            db.ref('wallet_history/' + uid).push({ type: 'bonus', amount: bonus, note: 'Friend bonus (referral register bonus)', time: Date.now() }).catch(() => {});
+          }
+          return status;
+        });
+    }
 
-        function rulesImgTag(m) {
-            const u = safeImg(m && m.rulesImg);
-            return u ? `<img src="${escAttr(u)}" alt="Rules" decoding="async" onerror="this.style.display='none'" style="width:100%;border-radius:14px;margin-bottom:12px">` : '';
-        }
+    // ==========================================
+    // 5. LEADERBOARD (real data, set by admin results)
+    // ==========================================
+    function switchLbFilter(btn, filterType) {
+      document.querySelectorAll('.lb-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      loadLeaderboard(filterType);
+    }
 
-        function bgImage(u, a, b) {
-            const grad = `linear-gradient(rgba(0,0,0,${a}), rgba(0,0,0,${b}))`;
-            const safe = safeImg(u);
-            return safe ? `${grad}, url("${safe.replace(/["\\\n\r]/g, c => encodeURIComponent(c))}")` : grad;
-        }
-
-        function finishRegister(uid, userData, typedCode) {
-            const code = userData.referredByCode;
-            const lookup = code ? db.ref('referralCodes/' + code).once('value') : Promise.resolve(null);
-            let status = typedCode ? 'invalid' : 'none',
-                bonus = 0;
-            return lookup.then(snap => {
-                    if (snap && snap.exists() && snap.val() !== uid) {
-                        userData.referredByUid = snap.val();
-                        bonus = Number(referCfg.friendBonus) || 0;
-                        userData.walletBalance = bonus;
-                        status = 'ok';
-                    }
-                    return db.ref('users/' + uid).set(userData);
-                }).then(() => db.ref('referralCodes/' + userData.referralCode).set(uid))
-                .then(() => {
-                    if (status === 'ok' && bonus > 0) {
-                        db.ref('wallet_history/' + uid).push({
-                            type: 'bonus',
-                            amount: bonus,
-                            note: 'Friend bonus (referral register bonus)',
-                            time: Date.now()
-                        }).catch(() => {});
-                    }
-                    return status;
-                });
-        }
-
-        // ==========================================
-        // 5. LEADERBOARD (real data, set by admin results)
-        // ==========================================
-        function switchLbFilter(btn, filterType) {
-            document.querySelectorAll('.lb-tab-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            loadLeaderboard(filterType);
-        }
-
-        let lbToken = 0;
-
-        function loadLeaderboard(type) {
-            const list = document.getElementById('leaderboardList');
-            list.innerHTML = '';
-            const token = ++lbToken; // ignore out-of-order responses when tabs are switched quickly
-            db.ref(`leaderboard/${type}`).once('value', snap => {
-                if (token !== lbToken) return;
-                const rows = Object.values(snap.val() || {}).filter(r => r.prize > 0)
-                    .sort((a, b) => b.prize - a.prize).slice(0, 50);
-                if (!rows.length) {
-                    list.innerHTML = '<div style="text-align:center;padding:40px;color:#94a3b8">No winners yet</div>';
-                    return;
-                }
-                rows.forEach((row, i) => {
-                    const card = document.createElement('div');
-                    card.className = 'lb-row-card';
-                    card.innerHTML = `<div>${i + 1}</div><div>${esc(row.name)}</div>
+    let lbToken = 0;
+    function loadLeaderboard(type) {
+      const list = document.getElementById('leaderboardList');
+      list.innerHTML = '';
+      const token = ++lbToken; // ignore out-of-order responses when tabs are switched quickly
+      db.ref(`leaderboard/${type}`).once('value', snap => {
+        if (token !== lbToken) return;
+        const rows = Object.values(snap.val() || {}).filter(r => r.prize > 0)
+          .sort((a, b) => b.prize - a.prize).slice(0, 50);
+        if (!rows.length) { list.innerHTML = '<div style="text-align:center;padding:40px;color:#94a3b8">No winners yet</div>'; return; }
+        rows.forEach((row, i) => {
+          const card = document.createElement('div');
+          card.className = 'lb-row-card';
+          card.innerHTML = `<div>${i + 1}</div><div>${esc(row.name)}</div>
             <div class="lb-prize-col"><span class="lb-coin-circle"></span><span>${esc(row.prize)}</span></div>`;
-                    list.appendChild(card);
-                });
-            }, () => {
-                if (token === lbToken) list.innerHTML = '<div style="text-align:center;padding:40px;color:#94a3b8">Could not load leaderboard</div>';
-            });
-        }
+          list.appendChild(card);
+        });
+      }, () => {
+        if (token === lbToken) list.innerHTML = '<div style="text-align:center;padding:40px;color:#94a3b8">Could not load leaderboard</div>';
+      });
+    }
 
-        // ==========================================
-        // 6. REFER & EARN
-        // ==========================================
-        function copyReferralCode() {
-            const code = document.getElementById('displayReferralCode').textContent;
-            navigator.clipboard.writeText(code).then(() => showToast("Referral Code copied: " + code))
-                .catch(() => showToast("Referral Code: " + code));
-        }
+    // ==========================================
+    // 6. REFER & EARN
+    // ==========================================
+    function copyReferralCode() {
+      const code = document.getElementById('displayReferralCode').textContent;
+      navigator.clipboard.writeText(code).then(() => showToast("Referral Code copied: " + code))
+        .catch(() => showToast("Referral Code: " + code));
+    }
 
-        function shareReferral(platform) {
-            const code = document.getElementById('displayReferralCode').textContent;
-            const link = referCfg.link || window.location.href;
-            const msg = encodeURIComponent(`Join ${brandLabel()} Esports using my referral code: ${code} and get ₹${referCfg.friendBonus || 0} bonus!`);
-            const url = encodeURIComponent(link);
-            const t = {
-                whatsapp: `https://api.whatsapp.com/send?text=${msg}%20${url}`,
-                telegram: `https://t.me/share/url?url=${url}&text=${msg}`,
-                facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${msg}`
-            } [platform];
-            if (t) window.open(t, '_blank');
-        }
+    function shareReferral(platform) {
+      const code = document.getElementById('displayReferralCode').textContent;
+      const link = referCfg.link || window.location.href;
+      const msg = encodeURIComponent(`Join ${brandLabel()} Esports using my referral code: ${code} and get ₹${referCfg.friendBonus || 0} bonus!`);
+      const url = encodeURIComponent(link);
+      const t = {
+        whatsapp: `https://api.whatsapp.com/send?text=${msg}%20${url}`,
+        telegram: `https://t.me/share/url?url=${url}&text=${msg}`,
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${msg}`
+      }[platform];
+      if (t) window.open(t, '_blank');
+    }
 
-        // ==========================================
-        // 7. MENU
-        // ==========================================
-        let infoReturnScreen = 'menuScreen';
+    // ==========================================
+    // 7. MENU
+    // ==========================================
+    let infoReturnScreen = 'menuScreen';
+    function openInfo(title, html) {
+      const cur = document.querySelector('.view-screen.active');
+      if (cur && cur.id !== 'infoScreen') infoReturnScreen = cur.id;
+      document.getElementById('infoTitle').textContent = title;
+      document.getElementById('infoBody').innerHTML = html;
+      showScreen('infoScreen');
+    }
 
-        function openInfo(title, html) {
-            const cur = document.querySelector('.view-screen.active');
-            if (cur && cur.id !== 'infoScreen') infoReturnScreen = cur.id;
-            document.getElementById('infoTitle').textContent = title;
-            document.getElementById('infoBody').innerHTML = html;
-            showScreen('infoScreen');
-        }
+    function closeInfo() { showScreen(infoReturnScreen); }
 
-        function closeInfo() {
-            showScreen(infoReturnScreen);
-        }
+    const ipHero = (icon, title, sub) => `<div class="ip-hero"><div class="ip-ico"><i class="fa-solid ${icon}"></i></div><div class="ip-name">${esc(title)}</div>${sub ? `<div class="ip-sub">${esc(sub)}</div>` : ''}</div>`;
+    const ipRow = (icon, label, val, click) => `<div class="ip-row"${click ? ` onclick="${click}"` : ''}><i class="fa-solid ${icon}"></i><div><small>${label}</small><b>${esc(val)}</b></div></div>`;
+    const ipStat = (icon, val, label) => `<div class="ip-stat"><i class="fa-solid ${icon}"></i><b>${esc(val)}</b><small>${label}</small></div>`;
 
-        const ipHero = (icon, title, sub) => `<div class="ip-hero"><div class="ip-ico"><i class="fa-solid ${icon}"></i></div><div class="ip-name">${esc(title)}</div>${sub ? `<div class="ip-sub">${esc(sub)}</div>` : ''}</div>`;
-        const ipRow = (icon, label, val, click) => `<div class="ip-row"${click ? ` onclick="${click}"` : ''}><i class="fa-solid ${icon}"></i><div><small>${label}</small><b>${esc(val)}</b></div></div>`;
-        const ipStat = (icon, val, label) => `<div class="ip-stat"><i class="fa-solid ${icon}"></i><b>${esc(val)}</b><small>${label}</small></div>`;
+    function openMenuSection(name) {
+      const u = currentUserData || {};
+      if (!auth.currentUser) return showToast('Please log in first!');
+      if (name === 'My Wallet') return openWallet();
 
-        function openMenuSection(name) {
-            const u = currentUserData || {};
-            if (!auth.currentUser) return showToast('Please log in first!');
-            if (name === 'My Wallet') return openWallet();
+      if (name === 'My Profile') {
+        const full = ((u.firstName || '') + ' ' + (u.lastName || '')).trim() || '-';
+        return openInfo(name, ipHero('fa-user', u.username || 'Player', u.email || '')
+          + ipRow('fa-at', 'Username', u.username || '-')
+          + ipRow('fa-id-card', 'Full Name', full)
+          + ipRow('fa-envelope', 'Email', u.email || '-')
+          + ipRow('fa-phone', 'Mobile', u.phone ? '+91 ' + u.phone : '-')
+          + ipRow('fa-gift', 'Referral Code (tap to copy)', u.referralCode || '-', 'copyReferralCode()')
+          + ipRow('fa-calendar-check', 'Member Since', u.createdAt ? new Date(u.createdAt).toLocaleDateString() : '-'));
+      }
 
-            if (name === 'My Profile') {
-                const full = ((u.firstName || '') + ' ' + (u.lastName || '')).trim() || '-';
-                return openInfo(name, ipHero('fa-user', u.username || 'Player', u.email || '') +
-                    ipRow('fa-at', 'Username', u.username || '-') +
-                    ipRow('fa-id-card', 'Full Name', full) +
-                    ipRow('fa-envelope', 'Email', u.email || '-') +
-                    ipRow('fa-phone', 'Mobile', u.phone ? '+91 ' + u.phone : '-') +
-                    ipRow('fa-gift', 'Referral Code (tap to copy)', u.referralCode || '-', 'copyReferralCode()') +
-                    ipRow('fa-calendar-check', 'Member Since', u.createdAt ? new Date(u.createdAt).toLocaleDateString() : '-'));
-            }
+      if (name === 'My Statistics') {
+        return openInfo(name, ipHero('fa-chart-simple', 'My Statistics', u.username || '')
+          + '<div class="ip-grid">'
+          + ipStat('fa-gamepad', u.matchesPlayed || 0, 'Matches Played')
+          + ipStat('fa-crosshairs', u.totalKills || 0, 'Total Kills')
+          + ipStat('fa-trophy', '₹ ' + (u.totalEarnings || 0), 'Total Earning')
+          + ipStat('fa-wallet', '₹ ' + (u.walletBalance || 0), 'Wallet Balance')
+          + '</div>');
+      }
 
-            if (name === 'My Statistics') {
-                return openInfo(name, ipHero('fa-chart-simple', 'My Statistics', u.username || '') +
-                    '<div class="ip-grid">' +
-                    ipStat('fa-gamepad', u.matchesPlayed || 0, 'Matches Played') +
-                    ipStat('fa-crosshairs', u.totalKills || 0, 'Total Kills') +
-                    ipStat('fa-trophy', '₹ ' + (u.totalEarnings || 0), 'Total Earning') +
-                    ipStat('fa-wallet', '₹ ' + (u.walletBalance || 0), 'Wallet Balance') +
-                    '</div>');
-            }
+      if (name === 'Notifications') {
+        return db.ref('notifications').limitToLast(30).once('value', snap => {
+          const items = Object.values(snap.val() || {}).sort((a, b) => (b.time || 0) - (a.time || 0));
+          openInfo(name, ipHero('fa-bell', 'Notifications', items.length ? '' : '')
+            + (items.length ? items.map(n => `<div class="ip-card ip-note"><i class="fa-solid fa-bell"></i><div><b>${esc(n.title)}</b><div style="white-space:pre-wrap">${esc(n.message)}</div>${n.time ? `<small>${new Date(n.time).toLocaleString()}</small>` : ''}</div></div>`).join('')
+              : '<div class="ip-empty"><i class="fa-regular fa-bell-slash" style="font-size:34px;display:block;margin-bottom:10px"></i>No notifications yet.</div>'));
+        });
+      }
 
-            if (name === 'Notifications') {
-                return db.ref('notifications').limitToLast(30).once('value', snap => {
-                    const items = Object.values(snap.val() || {}).sort((a, b) => (b.time || 0) - (a.time || 0));
-                    openInfo(name, ipHero('fa-bell', 'Notifications', items.length ? '' : '') +
-                        (items.length ? items.map(n => `<div class="ip-card ip-note"><i class="fa-solid fa-bell"></i><div><b>${esc(n.title)}</b><div style="white-space:pre-wrap">${esc(n.message)}</div>${n.time ? `<small>${new Date(n.time).toLocaleString()}</small>` : ''}</div></div>`).join('') :
-                            '<div class="ip-empty"><i class="fa-regular fa-bell-slash" style="font-size:34px;display:block;margin-bottom:10px"></i>No notifications yet.</div>'));
-                });
-            }
+      const pages = {
+        'Contact Us': ['contact', 'fa-headset', 'We are here to help you'],
+        'FAQ': ['faq', 'fa-circle-question', 'Frequently asked questions'],
+        'About Us': ['about', 'fa-circle-info', 'Know more about ' + brandLabel()],
+        'Privacy Policy': ['privacy', 'fa-lock', 'Your data and privacy'],
+        'Terms & Conditions': ['terms', 'fa-shield-halved', 'Rules you agree to']
+      };
+      const pg = pages[name];
+      if (!pg) return;
+      const raw = String(pagesCfg[pg[0]] || '').trim();
+      // blank line in the admin text = new card (works great for FAQ question/answer blocks)
+      const linkify = t => esc(t).replace(/(https?:\/\/[^\s<"']+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+      openInfo(name, ipHero(pg[1], name, pg[2]) + (raw
+        ? raw.split(/\n\s*\n/).map(b => `<div class="ip-card">${linkify(b.trim())}</div>`).join('')
+        : '<div class="ip-empty">Not added by admin yet.</div>'));
+    }
 
-            const pages = {
-                'Contact Us': ['contact', 'fa-headset', 'We are here to help you'],
-                'FAQ': ['faq', 'fa-circle-question', 'Frequently asked questions'],
-                'About Us': ['about', 'fa-circle-info', 'Know more about ' + brandLabel()],
-                'Privacy Policy': ['privacy', 'fa-lock', 'Your data and privacy'],
-                'Terms & Conditions': ['terms', 'fa-shield-halved', 'Rules you agree to']
-            };
-            const pg = pages[name];
-            if (!pg) return;
-            const raw = String(pagesCfg[pg[0]] || '').trim();
-            // blank line in the admin text = new card (works great for FAQ question/answer blocks)
-            const linkify = t => esc(t).replace(/(https?:\/\/[^\s<"']+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
-            openInfo(name, ipHero(pg[1], name, pg[2]) + (raw ?
-                raw.split(/\n\s*\n/).map(b => `<div class="ip-card">${linkify(b.trim())}</div>`).join('') :
-                '<div class="ip-empty">Not added by admin yet.</div>'));
-        }
-
-        function handleNoticeToggle(on) {
-            try {
-                localStorage.setItem('gx_notice', on ? 'on' : 'off');
-            } catch (e) {}
-            applyNoticeToggle();
-            showToast(`Importance Notice turned ${on ? 'ON' : 'OFF'}.`);
-        }
-    </script>
+    function handleNoticeToggle(on) {
+      try { localStorage.setItem('gx_notice', on ? 'on' : 'off'); } catch (e) {}
+      applyNoticeToggle();
+      showToast(`Importance Notice turned ${on ? 'ON' : 'OFF'}.`);
+    }
+  </script>
 </body>
-
 </html>
